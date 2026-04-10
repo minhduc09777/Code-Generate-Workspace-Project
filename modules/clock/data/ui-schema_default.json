@@ -1,0 +1,996 @@
+{
+  "hse": {
+    "blockId": "hse-block-id",
+    "fields": {
+      "onState": {
+        "name": "hseonoff",
+        "type": "radio",
+        "valueType": "rawValue",
+        "value": "ENABLE_OFF"
+      },
+      "inputValue": {
+        "selector": "#hse-input-value-id",
+        "type": "input",
+        "valueType": "rawValue",
+        "value": "25000000"
+      },
+      "bypassSelect": {
+        "selector": "#hse-bypass-select",
+        "type": "select",
+        "valueType": "rawValue",
+        "value": "BYPASS_DISABLE"
+      },
+      "secureSelect": {
+        "selector": "#hse-secure-select",
+        "type": "select",
+        "valueType": "rawValue",
+        "value": "SECURE_OFF"
+      },
+      "hseRTCDivSelect": {
+        "selector": "#hse-rtc-div-select",
+        "type": "select",
+        "valueType": "rawValue",
+        "value": "0 // no clock supply"
+      }
+    }
+  },
+  "hsi48": {
+    "blockId": "hsi48-block-id",
+    "fields": {
+      "onState": {
+        "name": "hsi48onoff",
+        "type": "radio",
+        "valueType": "rawValue",
+        "value": "ENABLE_OFF"
+      },
+      "fixValue": {
+        "type": "input",
+        "valueType": "fixedValue",
+        "selector": "#hsi48-value-id",
+        "value": 48000000,
+        "enabledBy": "onState"
+      }
+    }
+  },
+  "csi": {
+    "blockId": "csi-block-id",
+    "fields": {
+      "onState": {
+        "name": "csionoff",
+        "type": "radio",
+        "valueType": "rawValue",
+        "value": "ENABLE_OFF"
+      },
+      "fixValue": {
+        "type": "input",
+        "valueType": "fixedValue",
+        "selector": "#csi-value-id",
+        "value": 4000000,
+        "enabledBy": "onState"
+      },
+      "runInStopmode": {
+        "selector": "#csi-run-in-stopmode-select",
+        "type": "select",
+        "valueType": "rawValue",
+        "value": "RUN_IN_STOPMODE_DISABLE"
+      }
+    }
+  },
+  "hsi": {
+    "blockId": "hsi-block-id",
+    "fields": {
+      "onState": {
+        "name": "hsionoff",
+        "type": "radio",
+        "valueType": "rawValue",
+        "value": "ENABLE_ON"
+      },
+      "fixValue": {
+        "type": "input",
+        "valueType": "fixedValue",
+        "selector": "#hsi-value-id",
+        "value": 64000000,
+        "enabledBy": "onState"
+      },
+      "runInStopmode": {
+        "selector": "#hsi-stop-mode-select",
+        "type": "select",
+        "valueType": "rawValue",
+        "value": "RUN_IN_STOPMODE_DISABLE"
+      },
+      "divider": {
+        "selector": "#hsi-div-select",
+        "type": "select",
+        "valueType": "rawValue",
+        "value": "DIV_1"
+      }
+    }
+  },
+  "lsi": {
+    "blockId": "lsi-block-id",
+    "fields": {
+      "onState": {
+        "name": "lsionoff",
+        "type": "radio",
+        "valueType": "rawValue",
+        "value": "ENABLE_OFF"
+      },
+      "fixValue": {
+        "type": "input",
+        "valueType": "fixedValue",
+        "selector": "#lsi-value-id",
+        "value": 32000,
+        "enabledBy": "onState"
+      }
+    }
+  },
+  "lse": {
+    "blockId": "lse-block-id",
+    "fields": {
+      "onState": {
+        "name": "lseonoff",
+        "type": "radio",
+        "valueType": "rawValue",
+        "value": "ENABLE_OFF"
+      },
+      "fixValue": {
+        "type": "input",
+        "valueType": "fixedValue",
+        "selector": "#lse-value-id",
+        "value": 32768,
+        "enabledBy": "onState"
+      },
+      "bypassSelect": {
+        "selector": "#lse-bypass-select",
+        "type": "select",
+        "valueType": "rawValue",
+        "value": "BYPASS_DISABLE"
+      },
+      "secureSelect": {
+        "selector": "#lse-secure-select",
+        "type": "select",
+        "valueType": "rawValue",
+        "value": "SECURE_OFF"
+      },
+      "capSelect": {
+        "selector": "#lse-cap-select",
+        "type": "select",
+        "valueType": "rawValue",
+        "value": "CAPABILITY_LEVEL_LOWEST"
+      }
+    }
+  },
+  "pll": {
+    "sections": {
+      "common": {
+        "blockId": "pll-common-block-id",
+        "fields": {
+          "sourceSelect": {
+            "selector": "#pll-src-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLLCLK_SELECT_SRC_HSI"
+          },
+          "prescalerPll1": {
+            "selector": "#pll1-prescaler-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 1
+          },
+          "prescalerPll2": {
+            "selector": "#pll2-prescaler-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 1
+          },
+          "prescalerPll3": {
+            "selector": "#pll3-prescaler-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 1
+          },
+          "ref1Ck": {
+            "selector": "#ref1Ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "ref2Ck": {
+            "selector": "#ref2Ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "ref3Ck": {
+            "selector": "#ref3Ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          }
+        }
+      },
+      "pll1": {
+        "blockId": "pll1-block-id",
+        "fields": {
+          "enableSelect": {
+            "selector": "#pll1-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_ENABLE_ON"
+          },
+          "fracEnableSelect": {
+            "selector": "#pll1-frac-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_FRAC_ENABLE_OFF"
+          },
+          "fracValue": {
+            "selector": "#pll1-frac-value-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 0
+          },
+          "divn": {
+            "selector": "#pll1-divn-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 4
+          },
+          "divpEnableSelect": {
+            "selector": "#pll1-divp-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_DIVP_ENABLE_OFF"
+          },
+          "divqEnableSelect": {
+            "selector": "#pll1-divq-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_DIVQ_ENABLE_OFF"
+          },
+          "divrEnableSelect": {
+            "selector": "#pll1-divr-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_DIVR_ENABLE_OFF"
+          },
+          "divp": {
+            "selector": "#pll1-divp-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 1
+          },
+          "divq": {
+            "selector": "#pll1-divq-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 1
+          },
+          "divr": {
+            "selector": "#pll1-divr-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 1
+          },
+          "pll1PValue": {
+            "selector": "#pll1-p-value",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 0
+          },
+          "pll1QValue": {
+            "selector": "#pll1-q-value",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 0
+          },
+          "pll1RValue": {
+            "selector": "#pll1-r-value",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 0
+          }
+        }
+      },
+      "pll2": {
+        "blockId": "pll2-block-id",
+        "fields": {
+          "enableSelect": {
+            "selector": "#pll2-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_ENABLE_ON"
+          },
+          "fracEnableSelect": {
+            "selector": "#pll2-frac-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_FRAC_ENABLE_OFF"
+          },
+          "fracValue": {
+            "selector": "#pll2-frac-value-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 0
+          },
+          "divn": {
+            "selector": "#pll2-divn-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 4
+          },
+          "divpEnableSelect": {
+            "selector": "#pll2-divp-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_DIVP_ENABLE_OFF"
+          },
+          "divqEnableSelect": {
+            "selector": "#pll2-divq-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_DIVQ_ENABLE_OFF"
+          },
+          "divrEnableSelect": {
+            "selector": "#pll2-divr-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_DIVR_ENABLE_OFF"
+          },
+          "divp": {
+            "selector": "#pll2-divp-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 1
+          },
+          "divq": {
+            "selector": "#pll2-divq-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 1
+          },
+          "divr": {
+            "selector": "#pll2-divr-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 1
+          },
+          "pll2PValue": {
+            "selector": "#pll2-p-value",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 0
+          },
+          "pll2QValue": {
+            "selector": "#pll2-q-value",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 0
+          },
+          "pll2RValue": {
+            "selector": "#pll2-r-value",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 0
+          }
+        }
+      },
+      "pll3": {
+        "blockId": "pll3-block-id",
+        "fields": {
+          "enableSelect": {
+            "selector": "#pll3-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_ENABLE_ON"
+          },
+          "fracEnableSelect": {
+            "selector": "#pll3-frac-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_FRAC_ENABLE_OFF"
+          },
+          "fracValue": {
+            "selector": "#pll3-frac-value-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 0
+          },
+          "divn": {
+            "selector": "#pll3-divn-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 4
+          },
+          "divpEnableSelect": {
+            "selector": "#pll3-divp-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_DIVP_ENABLE_OFF"
+          },
+          "divqEnableSelect": {
+            "selector": "#pll3-divq-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_DIVQ_ENABLE_OFF"
+          },
+          "divrEnableSelect": {
+            "selector": "#pll3-divr-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PLL_DIVR_ENABLE_OFF"
+          },
+          "divp": {
+            "selector": "#pll3-divp-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 1
+          },
+          "divq": {
+            "selector": "#pll3-divq-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 1
+          },
+          "divr": {
+            "selector": "#pll3-divr-id",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 1
+          },
+          "pll3PValue": {
+            "selector": "#pll3-p-value",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 0
+          },
+          "pll3QValue": {
+            "selector": "#pll3-q-value",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 0
+          },
+          "pll3RValue": {
+            "selector": "#pll3-r-value",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 0
+          }
+        }
+      }
+    }
+  },
+  "systemconfig": {
+    "sections": {
+      "system": {
+        "blockId": "system-block-id",
+        "fields": {
+          "sysclkSourceSelect": {
+            "selector": "#sysclk-src-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "SYSCLK_SELECT_SRC_HSI"
+          },
+          "sysclkHz": {
+            "selector": "#sysclk-src-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "domainsPredivSelect": {
+            "selector": "#domains-prediv-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "DOMAINS_SELECT_PREDIV_1"
+          },
+          "domainsAhbPredivSelect": {
+            "selector": "#domains-ahb-prediv-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "DOMAINS_SELECT_AHB_PREDIV_1"
+          },
+          "domainsPredivCk": {
+            "selector": "#domains-prediv-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "domainsAhbPredivCk": {
+            "selector": "#domains-ahb-prediv-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          }
+        }
+      },
+      "domain1": {
+        "blockId": "domain1-block-id",
+        "fields": {
+          "d1Pclk3DivSelect": {
+            "selector": "#d1-pclk3-div-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PCLK3_SELECT_DIV_1"
+          },
+          "d1PerCkSrcSelect": {
+            "selector": "#d1-per-ck-src-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PER_CK_SELECT_SRC_HSI_KER"
+          },
+          "d1SdmmcKerSelect": {
+            "selector": "#d1-sdmmc-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "SDMMC_KER_SELECT_SRC_PLL1_Q_CK"
+          },
+          "d1QspiKerSelect": {
+            "selector": "#d1-qspi-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "SQUADSPI_KER_SELECT_SRC_RCC_HCLK3"
+          },
+          "d1FmcKerSelect": {
+            "selector": "#d1-fmc-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "FMC_KER_SELECT_SRC_RCC_HCLK3"
+          },
+          "cpuCk": {
+            "selector": "#cpu-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "cpuSystickCk": {
+            "selector": "#cpu-systick-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 8000000
+          },
+          "axiPeripheralCk": {
+            "selector": "#axi-peripheral-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "ahb3PeripheralCk": {
+            "selector": "#ahb3-peripheral-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "d1Pclk3DivSelectCk": {
+            "selector": "#d1-pclk3-div-select-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "d1Ahb3Mdma": { "selector": "#d1-ahb3-mdma", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d1Ahb3Dma2d": { "selector": "#d1-ahb3-dma2d", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d1Ahb3Jpgdec": { "selector": "#d1-ahb3-jpgdec", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d1Ahb3Fmc": { "selector": "#d1-ahb3-fmc", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d1Ahb3Qspi": { "selector": "#d1-ahb3-qspi", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d1Ahb3Sdmmc1": { "selector": "#d1-ahb3-sdmmc1", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d1Apb3Ltdc": { "selector": "#d1-apb3-ltdc", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d1Apb3Wwdg1": { "selector": "#d1-apb3-wwdg1", "type": "checkbox", "valueType": "checkedValue", "value": false }
+        }
+      },
+      "domain2": {
+        "blockId": "domain2-block-id",
+        "fields": {
+          "d2Pclk1DivSelect": {
+            "selector": "#d2-pclk1-div-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PCLK1_SELECT_DIV_1"
+          },
+          "d2Pclk2DivSelect": {
+            "selector": "#d2-pclk2-div-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PCLK2_SELECT_DIV_1"
+          },
+          "d2TimersTypeSelect": {
+            "selector": "#d2-timers-type-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "TIMERS_KER_PCLKX_TYPE_X2"
+          },
+          "d2HrtimerSrcSelect": {
+            "selector": "#d2-hrtimer-src-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "HRTIMER_SELECT_SRC_PLCK2"
+          },
+          "d2Sai1DfsdmKerSelect": {
+            "selector": "#d2-sai1-dfsdm-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "SAI1_DFSDM1_KER_SELECT_SRC_PLL1_Q_CK"
+          },
+          "d2Sai23KerSelect": {
+            "selector": "#d2-sai23-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "SAI23_KER_SELECT_SRC_PLL1_Q_CK"
+          },
+          "d2Spi123KerSelect": {
+            "selector": "#d2-spi123-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "SPI123_KER_SELECT_SRC_PLL1_Q_CK"
+          },
+          "d2Spi45KerSelect": {
+            "selector": "#d2-spi45-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "SPI45_KER_SELECT_SRC_APBCLK"
+          },
+          "d2SpdifrxKerSelect": {
+            "selector": "#d2-spdifrx-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "SPDIFRX_KER_SELECT_SRC_PLL1_Q_CK"
+          },
+          "d2Dfsdm1KerSelect": {
+            "selector": "#d2-dfsdm1-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "DFSDM1_KER_SELECT_SRC_RCC_PCLK2"
+          },
+          "d2FdcanKerSelect": {
+            "selector": "#d2-fdcan-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "FDCAN_KER_SELECT_SRC_HSE_CK"
+          },
+          "d2SwpmiKerSelect": {
+            "selector": "#d2-swpmi-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "SWPSEL_KER_SELECT_SRC_PCLK1"
+          },
+          "d2Usart234578KerSelect": {
+            "selector": "#d2-usart234578-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "USART234578_KER_SELECT_SRC_RCC_PCLK1"
+          },
+          "d2Usart16KerSelect": {
+            "selector": "#d2-usart16-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "USART16_KER_SELECT_SRC_RCC_PCLK2"
+          },
+          "d2RngKerSelect": {
+            "selector": "#d2-rng-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "RNG_KER_SELECT_SRC_HSI8_CK"
+          },
+          "d2I2c123KerSelect": {
+            "selector": "#d2-i2c123-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "I2C123_KER_SELECT_SRC_RCC_PCLK1"
+          },
+          "d2Usbotg12KerSelect": {
+            "selector": "#d2-usbotg12-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "USBOTG12_KER_SELECT_SRC_DISABLED"
+          },
+          "d2HdmicecKerSelect": {
+            "selector": "#d2-hdmicec-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "HDMICEC_KER_SELECT_SRC_LSE_CK"
+          },
+          "d2Lptim1KerSelect": {
+            "selector": "#d2-lptim1-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "LPTIM1_KER_SELECT_SRC_RCC_PCLK1"
+          },
+          "hclk1Hclk2Ck": {
+            "selector": "#hclk1-hclk2-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "d2Pclk1DivSelectCk": {
+            "selector": "#d2-pclk1-div-select-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "d2Pclk2DivSelectCk": {
+            "selector": "#d2-pclk2-div-select-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "d2TimerxTypeSelectCk": {
+            "selector": "#d2-timerx-type-select-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "d2TimeryTypeSelectCk": {
+            "selector": "#d2-timery-type-select-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "d2Ahb1Dma1": { "selector": "#d2-ahb1-dma1", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb1Dma2": { "selector": "#d2-ahb1-dma2", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb1Dmamux": { "selector": "#d2-ahb1-dmamux", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb1Adc12": { "selector": "#d2-ahb1-adc12", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb1Eth1mac": { "selector": "#d2-ahb1-eth1mac", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb1Eth1tx": { "selector": "#d2-ahb1-eth1tx", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb1Eth1rx": { "selector": "#d2-ahb1-eth1rx", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb1Usb1hs": { "selector": "#d2-ahb1-usb1hs", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb1Usb2hs": { "selector": "#d2-ahb1-usb2hs", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb2Dcmi": { "selector": "#d2-ahb2-dcmi", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb2Cryp": { "selector": "#d2-ahb2-cryp", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb2Hash": { "selector": "#d2-ahb2-hash", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb2Rng": { "selector": "#d2-ahb2-rng", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb2Sdmmc2": { "selector": "#d2-ahb2-sdmmc2", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb2Sram1": { "selector": "#d2-ahb2-sram1", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Ahb2Sram2": { "selector": "#d2-ahb2-sram2", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lTim2": { "selector": "#d2-apb1l-tim2", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lTim3": { "selector": "#d2-apb1l-tim3", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lTim4": { "selector": "#d2-apb1l-tim4", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lTim5": { "selector": "#d2-apb1l-tim5", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lTim6": { "selector": "#d2-apb1l-tim6", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lTim7": { "selector": "#d2-apb1l-tim7", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lTim12": { "selector": "#d2-apb1l-tim12", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lTim13": { "selector": "#d2-apb1l-tim13", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lTim14": { "selector": "#d2-apb1l-tim14", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lLptim1": { "selector": "#d2-apb1l-lptim1", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lSpi2": { "selector": "#d2-apb1l-spi2", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lSpi3": { "selector": "#d2-apb1l-spi3", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lSpdifrx": { "selector": "#d2-apb1l-spdifrx", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lUsart2": { "selector": "#d2-apb1l-usart2", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lUsart3": { "selector": "#d2-apb1l-usart3", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lUart4": { "selector": "#d2-apb1l-uart4", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lUart5": { "selector": "#d2-apb1l-uart5", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lI2c1": { "selector": "#d2-apb1l-i2c1", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lI2c2": { "selector": "#d2-apb1l-i2c2", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lI2c3": { "selector": "#d2-apb1l-i2c3", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lCec": { "selector": "#d2-apb1l-cec", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lDac12": { "selector": "#d2-apb1l-dac12", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lUart7": { "selector": "#d2-apb1l-uart7", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1lUart8": { "selector": "#d2-apb1l-uart8", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1hCrs": { "selector": "#d2-apb1h-crs", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1hSwpmi1": { "selector": "#d2-apb1h-swpmi1", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1hOpamp": { "selector": "#d2-apb1h-opamp", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1hMdios": { "selector": "#d2-apb1h-mdios", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb1hFdcan": { "selector": "#d2-apb1h-fdcan", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Tim1": { "selector": "#d2-apb2-tim1", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Tim8": { "selector": "#d2-apb2-tim8", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Usart1": { "selector": "#d2-apb2-usart1", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Usart6": { "selector": "#d2-apb2-usart6", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Spi1": { "selector": "#d2-apb2-spi1", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Spi4": { "selector": "#d2-apb2-spi4", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Spi5": { "selector": "#d2-apb2-spi5", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Tim15": { "selector": "#d2-apb2-tim15", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Tim16": { "selector": "#d2-apb2-tim16", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Tim17": { "selector": "#d2-apb2-tim17", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Sai1": { "selector": "#d2-apb2-sai1", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Sai2": { "selector": "#d2-apb2-sai2", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Sai3": { "selector": "#d2-apb2-sai3", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Dfsdm1": { "selector": "#d2-apb2-dfsdm1", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d2Apb2Hrtim": { "selector": "#d2-apb2-hrtim", "type": "checkbox", "valueType": "checkedValue", "value": false }
+        }
+      },
+      "domain3": {
+        "blockId": "domain3-block-id",
+        "fields": {
+          "d3Pclk4DivSelect": {
+            "selector": "#d3-pclk4-div-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "PCLK4_SELECT_DIV_1"
+          },
+          "d3Lpuart1KerSelect": {
+            "selector": "#d3-lpuart1-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "LPUART1_KER_SELECT_SRC_RCC_PCLK4"
+          },
+          "d3I2c4KerSelect": {
+            "selector": "#d3-i2c4-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "I2C4_KER_SELECT_SRC_RCC_PCLK4"
+          },
+          "d3Lptim2KerSelect": {
+            "selector": "#d3-lptim2-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "LPTIM2_KER_SELECT_SRC_RCC_PCLK4"
+          },
+          "d3Lptim345KerSelect": {
+            "selector": "#d3-lptim345-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "LPTIM345_KER_SELECT_SRC_RCC_PCLK4"
+          },
+          "d3AdcKerSelect": {
+            "selector": "#d3-adc-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "ADC_KER_SELECT_SRC_PLL2_P_CK"
+          },
+          "d3Sai4aKerSelect": {
+            "selector": "#d3-sai4a-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "SAI4A_KER_SELECT_SRC_PLL1_Q_CK"
+          },
+          "d3Sai4bKerSelect": {
+            "selector": "#d3-sai4b-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "SAI4B_KER_SELECT_SRC_PLL1_Q_CK"
+          },
+          "d3Spi6KerSelect": {
+            "selector": "#d3-spi6-ker-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "SPI6_KER_SELECT_SRC_RCC_PCLK4"
+          },
+          "hclk4Ck": {
+            "selector": "#hclk4-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "d3Pclk4DivSelectCk": {
+            "selector": "#d3-pclk4-div-select-ck",
+            "type": "display",
+            "valueType": "rawValue",
+            "value": 64000000
+          },
+          "d3Ahb4Gpioa": { "selector": "#d3-ahb4-gpioa", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Gpiob": { "selector": "#d3-ahb4-gpiob", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Gpioc": { "selector": "#d3-ahb4-gpioc", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Gpiod": { "selector": "#d3-ahb4-gpiod", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Gpioe": { "selector": "#d3-ahb4-gpioe", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Gpiof": { "selector": "#d3-ahb4-gpiof", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Gpiog": { "selector": "#d3-ahb4-gpiog", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Gpioh": { "selector": "#d3-ahb4-gpioh", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Gpioi": { "selector": "#d3-ahb4-gpioi", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Gpioj": { "selector": "#d3-ahb4-gpioj", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Gpiok": { "selector": "#d3-ahb4-gpiok", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Crc": { "selector": "#d3-ahb4-crc", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Bdma": { "selector": "#d3-ahb4-bdma", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Adc3": { "selector": "#d3-ahb4-adc3", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Hsem": { "selector": "#d3-ahb4-hsem", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Ahb4Bkpram": { "selector": "#d3-ahb4-bkpram", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Apb4Syscfg": { "selector": "#d3-apb4-syscfg", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Apb4Lpuart1": { "selector": "#d3-apb4-lpuart1", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Apb4Spi6": { "selector": "#d3-apb4-spi6", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Apb4I2c4": { "selector": "#d3-apb4-i2c4", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Apb4Lptim2": { "selector": "#d3-apb4-lptim2", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Apb4Lptim3": { "selector": "#d3-apb4-lptim3", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Apb4Lptim4": { "selector": "#d3-apb4-lptim4", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Apb4Lptim5": { "selector": "#d3-apb4-lptim5", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Apb4Comp12": { "selector": "#d3-apb4-comp12", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Apb4Vref": { "selector": "#d3-apb4-vref", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Apb4Rtcapb": { "selector": "#d3-apb4-rtcapb", "type": "checkbox", "valueType": "checkedValue", "value": false },
+          "d3Apb4Sai4": { "selector": "#d3-apb4-sai4", "type": "checkbox", "valueType": "checkedValue", "value": false }
+        }
+      }
+    }
+  },
+  "i2s": {
+    "sections": {
+      "i2s": {
+        "blockId": "i2s-clock-id",
+        "fields": {
+          "i2sHz": {
+            "selector": "#i2s-input-ck",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 0
+          }
+        }
+      }
+    }
+  },
+  "rtc": {
+    "sections": {
+      "rtc": {
+        "blockId": "rtc-output-id",
+        "fields": {
+          "rtcEnableSelect": {
+            "selector": "#rtc-enable-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "RTC_ENABLE_OFF"
+          },
+          "rtcSrcSelect": {
+            "selector": "#rtc-src-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "RTC_SELECT_NONE"
+          }
+        }
+      }
+    }
+  },
+  "clockcfg": {
+    "sections": {
+      "clockcfg": {
+        "blockId": "clockcfg-block-id",
+        "fields": {
+          "isrPriority": {
+            "selector": "#clockcfg-isr-priority",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": 0
+          },
+          "isrRequest": {
+            "selector": "#clockcfg-isr-request",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": "RCC_IRQn"
+          },
+          "callback": {
+            "selector": "#clockcfg-callback",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": "NULL"
+          },
+          "context": {
+            "selector": "#clockcfg-context",
+            "type": "input",
+            "valueType": "rawValue",
+            "value": "NULL"
+          }
+        }
+      }
+    }
+  },
+  "clockoutput": {
+    "sections": {
+      "mco1": {
+        "blockId": "mco1-output-id",
+        "fields": {
+          "mco1SrcSelect": {
+            "selector": "#mco1-src-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "MCO1_SELECT_SRC_HSI"
+          },
+          "mco1DivSelect": {
+            "selector": "#mco1-div-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "MCO_DIV_1"
+          }
+        }
+      },
+      "mco2": {
+        "blockId": "mco2-output-id",
+        "fields": {
+          "mco2SrcSelect": {
+            "selector": "#mco2-src-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "MCO2_SELECT_SRC_SYS"
+          },
+          "mco2DivSelect": {
+            "selector": "#mco2-div-select",
+            "type": "select",
+            "valueType": "rawValue",
+            "value": "MCO_DIV_1"
+          }
+        }
+      }
+    }
+  }
+}
