@@ -9,7 +9,7 @@ function UpdateCKContent(id, value) {
 
 function getDivNumber(divValue) {
     const match = String(divValue).match(/(\d+)$/);
-    return match ? parseInt(match[1]) : 1;
+    return match ? parseInt(match[1]) : 0;
 }
 
 function getMco1SourceHz(srcValue) {

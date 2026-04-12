@@ -970,7 +970,7 @@
             "selector": "#mco1-div-select",
             "type": "select",
             "valueType": "rawValue",
-            "value": "MCO_DIV_1"
+            "value": "MCO_DISABLE"
           }
         }
       },
@@ -987,7 +987,7 @@
             "selector": "#mco2-div-select",
             "type": "select",
             "valueType": "rawValue",
-            "value": "MCO_DIV_1"
+            "value": "MCO_DISABLE"
           }
         }
       }

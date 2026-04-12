@@ -9,9 +9,9 @@ function parseDivNumber(divValue) {
 class clock_output_cfg {
     constructor(
         mco1SrcClk = "MCO1_SELECT_SRC_HSI",
-        mco1Div    = "MCO_DIV_1",
+        mco1Div    = "MCO_DISABLE",
         mco2SrcClk = "MCO2_SELECT_SRC_SYS",
-        mco2Div    = "MCO_DIV_1"
+        mco2Div    = "MCO_DISABLE"
     ) {
         this.mco1_srcclk = mco1SrcClk;
         this.mco1_div    = mco1Div;
@@ -102,11 +102,11 @@ export function ClockOutputInitial() {
     const mco1SrcClk = mco1Fields.mco1SrcSelect
         ?? parseSelectSchemaDefault(sections.mco1, "mco1SrcSelect", "MCO1_SELECT_SRC_HSI");
     const mco1Div    = mco1Fields.mco1DivSelect
-        ?? parseSelectSchemaDefault(sections.mco1, "mco1DivSelect", "MCO_DIV_1");
+        ?? parseSelectSchemaDefault(sections.mco1, "mco1DivSelect", "MCO_DISABLE");
     const mco2SrcClk = mco2Fields.mco2SrcSelect
         ?? parseSelectSchemaDefault(sections.mco2, "mco2SrcSelect", "MCO2_SELECT_SRC_SYS");
     const mco2Div    = mco2Fields.mco2DivSelect
-        ?? parseSelectSchemaDefault(sections.mco2, "mco2DivSelect", "MCO_DIV_1");
+        ?? parseSelectSchemaDefault(sections.mco2, "mco2DivSelect", "MCO_DISABLE");
 
     return new clock_output_managment(mco1SrcClk, mco1Div, mco2SrcClk, mco2Div);
 }
