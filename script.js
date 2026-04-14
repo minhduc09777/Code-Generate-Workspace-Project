@@ -5,6 +5,8 @@ import { clockModuleGenerateProcess, ClockModuleInitialPage, ClockModuleInitialE
 
 import { Event_handler_initialise } from './event_handler/event_handler.js';
 
+var moduleConfig = "clock"
+
 var modulesSupport = {
     "clock": {
         "generate": clockModuleGenerateProcess,
@@ -14,7 +16,7 @@ var modulesSupport = {
 }
 
 function copyCode() {
-    const CodeArray = modulesSupport["clock"]["generate"]();
+    const CodeArray = modulesSupport[moduleConfig]["generate"]();
 
     if (!CodeArray) {
         alert("No Data");
@@ -27,7 +29,7 @@ function copyCode() {
 
 function generateCodes() {
 
-    const Content = modulesSupport["clock"]["generate"]();
+    const Content = modulesSupport[moduleConfig]["generate"]();
     if (!Content) {
         return;
     }
@@ -38,14 +40,14 @@ function generateCodes() {
 
 function InitialisePage()
 {
-    modulesSupport["clock"]["initPage"]();
+    modulesSupport[moduleConfig]["initPage"]();
 }
 
 function InitialiseEvent()
 {
     Event_handler_initialise();
 
-    modulesSupport["clock"]["initEvent"]();
+    modulesSupport[moduleConfig]["initEvent"]();
     InitialiseBottomScrollbar();
     document.querySelector(".tab-btn").addEventListener("click", () => {
         ToggleContainer('generate-container-id');
@@ -57,11 +59,11 @@ function InitialiseEvent()
 }
 
 function InitialiseBottomScrollbar() {
-    const clockContainer = document.querySelector(".containerRCC") || document.querySelector(".clock");
+    const moduleContainer = document.querySelector(".containerModule");
     const bottomScrollbar = document.getElementById("bottom-scrollbar-id");
     const bottomScrollbarInner = document.getElementById("bottom-scrollbar-inner-id");
 
-    if (!clockContainer || !bottomScrollbar || !bottomScrollbarInner) {
+    if (!moduleContainer || !bottomScrollbar || !bottomScrollbarInner) {
         return;
     }
 
@@ -69,7 +71,7 @@ function InitialiseBottomScrollbar() {
     let syncingFromClock = false;
 
     const updateBottomScrollbarVisibility = () => {
-        const maxScrollLeft = Math.max(0, clockContainer.scrollWidth - clockContainer.clientWidth);
+        const maxScrollLeft = Math.max(0, moduleContainer.scrollWidth - moduleContainer.clientWidth);
         const hasHorizontalOverflow = maxScrollLeft > 1;
         const scrollRoot = document.documentElement;
         const isAtPageBottom = window.scrollY + window.innerHeight >= scrollRoot.scrollHeight - 1;
@@ -82,7 +84,7 @@ function InitialiseBottomScrollbar() {
     };
 
     const updateBottomScrollbarWidth = () => {
-        const targetWidth = Math.max(clockContainer.scrollWidth, clockContainer.clientWidth);
+        const targetWidth = Math.max(moduleContainer.scrollWidth, moduleContainer.clientWidth);
         bottomScrollbarInner.style.width = `${targetWidth}px`;
         updateBottomScrollbarVisibility();
     };
@@ -93,18 +95,18 @@ function InitialiseBottomScrollbar() {
         }
 
         syncingFromBottom = true;
-        clockContainer.scrollLeft = bottomScrollbar.scrollLeft;
+        moduleContainer.scrollLeft = bottomScrollbar.scrollLeft;
         syncingFromBottom = false;
         updateBottomScrollbarVisibility();
     });
 
-    clockContainer.addEventListener("scroll", () => {
+    moduleContainer.addEventListener("scroll", () => {
         if (syncingFromBottom) {
             return;
         }
 
         syncingFromClock = true;
-        bottomScrollbar.scrollLeft = clockContainer.scrollLeft;
+        bottomScrollbar.scrollLeft = moduleContainer.scrollLeft;
         syncingFromClock = false;
         updateBottomScrollbarVisibility();
     });

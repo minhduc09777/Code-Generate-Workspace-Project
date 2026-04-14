@@ -38,10 +38,13 @@ body {
     flex-direction: column;
     padding-bottom: 18px;
 }
-.clock {
+.modules {
     display: flex;
     width: 100%;
     overflow-x: auto;
+}
+.modules .title{
+    font-size: 35px;
 }
 
 .bottom-scrollbar {
@@ -65,7 +68,7 @@ body {
     display: none;
 }
 
-.containerRCC{
+.containerModule{
     margin: 0px;
     padding: 20px;
     border: 1px solid var(--panel-border);
@@ -104,7 +107,7 @@ body {
     grid-area: title;
 }
 
-.containerRCC h2 {
+.containerModule h2 {
     margin: 0 0 12px 0;
     color: #1c4775;
     letter-spacing: 0.6px;
@@ -651,7 +654,7 @@ body {
 
 /* Tab Bar */
 .tab-bar {
-    display: block;
+    display: flex;
     align-items: center;
     gap: 8px;
     padding: 6px 16px;
