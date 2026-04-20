@@ -1,22 +1,16 @@
 
 import { handleCodeBlock, handleConfigBlock, ToggleContainer} from './utils/utils.js';
-
-import { clockModuleGenerateProcess, ClockModuleInitialPage, ClockModuleInitialEvent } from './modules/clock/clock.js';
-
+import {getModuleInstance} from './modules/modules.js'
 import { Event_handler_initialise } from './event_handler/event_handler.js';
 
-var moduleConfig = "clock"
+var module = getModuleInstance();
+var oldModule = null;
 
-var modulesSupport = {
-    "clock": {
-        "generate": clockModuleGenerateProcess,
-        "initPage": ClockModuleInitialPage,
-        "initEvent": ClockModuleInitialEvent,
-    },
-}
+module.selectCurrentModule("clock");
 
-function copyCode() {
-    const CodeArray = modulesSupport[moduleConfig]["generate"]();
+async function copyCode() {
+
+    const CodeArray = await module.generateCode();
 
     if (!CodeArray) {
         alert("No Data");
@@ -27,33 +21,54 @@ function copyCode() {
     alert("Copied!");
 }
 
-function generateCodes() {
+async function generateCodes() {
 
-    const Content = modulesSupport[moduleConfig]["generate"]();
+    const Content = await module.generateCode();
     if (!Content) {
         return;
     }
+
+    console.log(Content);
 
     handleCodeBlock(Content);
     handleConfigBlock(Content);
 }
 
-function InitialisePage()
-{
-    modulesSupport[moduleConfig]["initPage"]();
+async function InitialisePage() {
+    const html = await module.LoadHtml();
+    document.getElementById("module-container-id").innerHTML = html;
+    document.getElementById("clock").classList.toggle('pressed-btn');
+    oldModule = module.getName();
+
+    module.loadCSS();
+    module.initData();
 }
 
 function InitialiseEvent()
 {
     Event_handler_initialise();
 
-    modulesSupport[moduleConfig]["initEvent"]();
+    module.initEvent();
+
     InitialiseBottomScrollbar();
-    document.querySelector(".tab-btn").addEventListener("click", () => {
-        ToggleContainer('generate-container-id');
-        const element = document.querySelector(".tab-btn");
-        element.classList.toggle('pressed-btn');
+
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const targetId = btn.id;
+            if (!module.isSupportModule(targetId))
+            {
+                ToggleContainer('generate-container-id');
+                btn.classList.toggle('pressed-btn')
+                return;
+            }
+            if (targetId === module.getName()) return;
+            document.getElementById(oldModule).classList.toggle('pressed-btn');
+            module.selectCurrentModule(targetId);
+            btn.classList.toggle('pressed-btn');
+            oldModule = module.getName();
+        });
     });
+
     document.querySelector(".copy-btn").addEventListener("click", copyCode);
     document.querySelector(".generate-btn").addEventListener("click", generateCodes);
 }
@@ -116,11 +131,14 @@ function InitialiseBottomScrollbar() {
     updateBottomScrollbarWidth();
 }
 
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", InitialisePage);
-    document.addEventListener("DOMContentLoaded", InitialiseEvent);
-} else {
-    InitialisePage();
+async function main() {
+    await InitialisePage();
     InitialiseEvent();
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", main);
+} else {
+    main();
 }
 

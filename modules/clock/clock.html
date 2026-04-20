@@ -1,0 +1,1080 @@
+<h2 class="title">RCC</h2>
+<div class="oscContainer">
+    <div class="nameClock">Oscillator</div>
+    <div id="hse-block-id" class="OscBlock"> 
+        <div class="nameClock">HSE Oscillator</div>
+        <div class="inputvalueClock" >
+            <label for="hse-input-value-id">Enter Value:</label>
+            <input id="hse-input-value-id" type="number" inputmode="numeric" min="0" step="1" value="25000000"><br> <span>Hz</span>
+        </div>
+        <div id="hse-onoff-id" class="radioOnOff">
+            <input name="hseonoff" type="radio" checked="true" value="ENABLE_OFF">Off</input>
+            <input name="hseonoff" type="radio" value="ENABLE_ON">On</input>  <br>
+        </div>
+        <div id="hse-bypass-id" class="osc-select-option">
+            <label for="hse-bypass-select">HSE Bypass:</label>
+            <select id="hse-bypass-select" class="osc-option-select">
+                <option value="BYPASS_DISABLE" selected>Disabled</option>
+                <option value="BYPASS_WITH_EXCLOCK">External Clock</option>
+            </select>
+        </div>
+        <div id="hse-secure-id" class="osc-select-option">
+            <label for="hse-secure-select">HSE Secure:</label>
+            <select id="hse-secure-select" class="osc-option-select">
+                <option value="SECURE_OFF" selected>Secure disabled</option>
+                <option value="SECURE_ON">Secure enabled</option>
+            </select>
+        </div>
+        <div id="hse-rtc-div-id" class="osc-select-option">
+            <label for="hse-rtc-div-select">HSE supply RTC:</label>
+            <select id="hse-rtc-div-select" class="osc-option-select">
+                <option value="0 // no clock supply" selected>No Supply</option>
+            </select>
+        </div>
+    </div>
+    <div id="hsi-block-id" class="OscBlock"> 
+        <div class="nameClock">HSI Oscillator</div>
+        <div>Fix value</div>
+        <div class="fixvalueClock hsi-value-box">
+            <div id="hsi-value-id">64000000</div> <span>Hz</span>
+        </div>
+        <div id="hsi-onoff-id" class="radioOnOff">
+            <input name="hsionoff" type="radio" value="ENABLE_OFF">Off</input>
+            <input name="hsionoff" type="radio" checked="true" value="ENABLE_ON">On</input>  <br>
+        </div>
+        <div id="hsi-div-id" class="osc-select-option">
+            <label for="hsi-div-select">HSI Divider:</label>
+            <select id="hsi-div-select" class="osc-option-select">
+                <option value="DIV_1" selected>&#247;1</option>
+                <option value="DIV_2">&#247;2</option>
+                <option value="DIV_4">&#247;4</option>
+                <option value="DIV_8">&#247;8</option>
+            </select>
+        </div>
+        <div id="hsi-stop-mode-id" class="osc-select-option">
+            <label for="hsi-stop-mode-select">HSI Stop Mode:</label>
+            <select id="hsi-stop-mode-select" class="osc-option-select">
+                <option value="RUN_IN_STOPMODE_DISABLE" selected>Disable HSI in stop mode</option>
+                <option value="RUN_IN_STOPMODE_ENABLE">Enable HSI in stop mode</option>
+            </select>
+        </div>
+    </div>
+    <div id="hsi48-block-id" class="OscBlock"> 
+        <div class="nameClock">HSI48 Oscillator</div>
+        <div>Fix value</div>
+        <div class="fixvalueClock hsi48-value-box">
+            <div id="hsi48-value-id">48000000</div> <span>Hz</span>
+        </div>
+        <div id="hsi48-onoff-id" class="radioOnOff">
+            <input name="hsi48onoff" type="radio" checked="true" value="ENABLE_OFF">Off</input>
+            <input name="hsi48onoff" type="radio" value="ENABLE_ON">On</input>  <br>
+        </div>
+    </div>
+    <div id="csi-block-id" class="OscBlock"> 
+        <div class="nameClock">CSI Oscillator</div>
+        <div>Fix value</div>
+        <div class="fixvalueClock csi-value-box">
+            <div id="csi-value-id">4000000</div> <span>Hz</span>
+        </div>
+        <div id="csi-onoff-id" class="radioOnOff">
+            <input name="csionoff" type="radio" checked="true" value="ENABLE_OFF">Off</input>
+            <input name="csionoff" type="radio" value="ENABLE_ON">On</input>  <br>
+        </div>
+        <div id="csi-run-in-stopmode-id" class="osc-select-option">
+            <label for="csi-run-in-stopmode-select">CSI Stop Mode: </label>
+            <select id="csi-run-in-stopmode-select" class="osc-option-select"> 
+                <option value="RUN_IN_STOPMODE_DISABLE" selected>Disable CSI run in stopmode</option>
+                <option value="RUN_IN_STOPMODE_ENABLE">Enabled CSI run in stopmode</option>
+            </select>
+        </div>
+    </div>
+    <div id="lsi-block-id" class="OscBlock"> 
+        <div class="nameClock">LSI Oscillator</div>
+        <div>Fix value</div>
+        <div class="fixvalueClock lsi-value-box">
+            <div id="lsi-value-id">32000</div> <span>Hz</span>
+        </div>
+        <div id="lsi-onoff-id" class="radioOnOff">
+            <input name="lsionoff" type="radio" checked="true" value="ENABLE_OFF">Off</input>
+            <input name="lsionoff" type="radio" value="ENABLE_ON">On</input>  <br>
+        </div>
+    </div>
+    <div id="lse-block-id" class="OscBlock"> 
+        <div class="nameClock">LSE Oscillator</div>
+        <div>Fix value</div>
+        <div class="fixvalueClock lse-value-box">
+            <div id="lse-value-id">32768</div> <span>Hz</span>
+        </div>
+        <div id="lse-onoff-id" class="radioOnOff">
+            <input name="lseonoff" type="radio" checked="true" value="ENABLE_OFF">Off</input>
+            <input name="lseonoff" type="radio" value="ENABLE_ON">On</input>  <br>
+        </div>
+        <div id="lse-bypass-id" class="osc-select-option">
+            <label for="lse-bypass-select">LSE Bypass:</label>
+            <select id="lse-bypass-select" class="osc-option-select">
+                <option value="BYPASS_DISABLE" selected>Disabled</option>
+                <option value="BYPASS_WITH_EXCLOCK">External Clock</option>
+            </select>
+        </div>
+        <div id="lse-secure-id" class="osc-select-option">
+            <label for="lse-secure-select">LSE Secure:</label>
+            <select id="lse-secure-select" class="osc-option-select">
+                <option value="SECURE_OFF" selected>Secure disabled</option>
+                <option value="SECURE_ON">Secure enabled</option>
+            </select>
+        </div>
+        <div id="lse-cap-id" class="osc-select-option">
+            <label for="lse-cap-select">LSE Capability level:</label>
+            <select id="lse-cap-select" class="osc-option-select">
+                <option value="CAPABILITY_LEVEL_LOWEST" selected>lowest</option>
+                <option value="CAPABILITY_LEVEL_LOW">low</option>
+                <option value="CAPABILITY_LEVEL_MEDIUM_LOW">medium low</option>
+                <option value="CAPABILITY_LEVEL_MEDIUM_HIGH">medium high</option>
+                <option value="CAPABILITY_LEVEL_HIGHEST">highest</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- System Config Section                                       -->
+<!-- ============================================================ -->
+<div class="clockContainer" id="system-container-id">
+    <div class="systemContainer">
+        <div class="nameClock system-section-label">System Config</div>
+        <!-- System block: SYSCLK source + domain/AHB pre-dividers -->
+        <div id="system-block-id" class="OscBlock system-block">
+            <div class="nameClock">System Clock</div>
+            <div id="sysclk-src-id" class="osc-select-option">
+                <label for="sysclk-src-select">SYSCLK Source:</label>
+                <select id="sysclk-src-select" class="osc-option-select">
+                    <option value="SYSCLK_SELECT_SRC_HSI" selected>HSI</option>
+                    <option value="SYSCLK_SELECT_SRC_CSI">CSI</option>
+                    <option value="SYSCLK_SELECT_SRC_HSE">HSE</option>
+                    <option value="SYSCLK_SELECT_SRC_PLL1_P">PLL1_P</option>
+                </select>
+                <div class="inputvalueClock clock-readout" id="sysclk-src-ck">64000000 <span>Hz</span></div>
+            </div>
+            <div id="domains-prediv-id" class="osc-select-option">
+                <label for="domains-prediv-select">Domain Prediv (D1CPRE):</label>
+                <select id="domains-prediv-select" class="osc-option-select">
+                    <option value="DOMAINS_SELECT_PREDIV_1" selected>&#247;1</option>
+                    <option value="DOMAINS_SELECT_PREDIV_2">&#247;2</option>
+                    <option value="DOMAINS_SELECT_PREDIV_4">&#247;4</option>
+                    <option value="DOMAINS_SELECT_PREDIV_8">&#247;8</option>
+                    <option value="DOMAINS_SELECT_PREDIV_16">&#247;16</option>
+                    <option value="DOMAINS_SELECT_PREDIV_64">&#247;64</option>
+                    <option value="DOMAINS_SELECT_PREDIV_128">&#247;128</option>
+                    <option value="DOMAINS_SELECT_PREDIV_256">&#247;256</option>
+                    <option value="DOMAINS_SELECT_PREDIV_512">&#247;512</option>
+                </select>
+                <div class="inputvalueClock clock-readout" id="domains-prediv-ck">64000000 <span>Hz</span></div>
+            </div>
+            <div id="domains-ahb-prediv-id" class="osc-select-option">
+                <label for="domains-ahb-prediv-select">AHB Prediv (HPRE):</label>
+                <select id="domains-ahb-prediv-select" class="osc-option-select">
+                    <option value="DOMAINS_SELECT_AHB_PREDIV_1" selected>&#247;1</option>
+                    <option value="DOMAINS_SELECT_AHB_PREDIV_2">&#247;2</option>
+                    <option value="DOMAINS_SELECT_AHB_PREDIV_4">&#247;4</option>
+                    <option value="DOMAINS_SELECT_AHB_PREDIV_8">&#247;8</option>
+                    <option value="DOMAINS_SELECT_AHB_PREDIV_16">&#247;16</option>
+                    <option value="DOMAINS_SELECT_AHB_PREDIV_64">&#247;64</option>
+                    <option value="DOMAINS_SELECT_AHB_PREDIV_128">&#247;128</option>
+                    <option value="DOMAINS_SELECT_AHB_PREDIV_256">&#247;256</option>
+                    <option value="DOMAINS_SELECT_AHB_PREDIV_512">&#247;512</option>
+                </select>
+                <div class="inputvalueClock clock-readout" id="domains-ahb-prediv-ck">64000000 <span>Hz</span></div>
+            </div>
+        </div>
+
+        <!-- Domain 1 block: D1 - AHB3 / APB3 -->
+        <div id="domain1-block-id" class="OscBlock domain-block domain1-block">
+            <div class="nameClock">Domain 1 (AHB3 / APB3)</div>
+            <div class="domain-selects">
+                <div class="osc-select-option">
+                    <label>CPU clock(rcc_c_ck):</label>
+                    <div class="inputvalueClock clock-readout" id="cpu-ck">64000000 <span>Hz</span></div>
+                </div>
+                <div class="osc-select-option">
+                    <label>CPU systick clock:</label>
+                    <div class="inputvalueClock clock-readout" id="cpu-systick-ck">8000000 <span>Hz</span></div>
+                </div>
+                <div class="osc-select-option">
+                    <label>AXI peripheral clocks (aclk):</label>
+                    <div class="inputvalueClock clock-readout" id="axi-peripheral-ck">64000000 <span>Hz</span></div>
+                </div>
+                <div class="osc-select-option">
+                    <label>AHB3 peripheral clocks (hclk3):</label>
+                    <div class="inputvalueClock clock-readout" id="ahb3-peripheral-ck">64000000 <span>Hz</span></div>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d1-pclk3-div-select">D1PPRE:</label>
+                    <select id="d1-pclk3-div-select" class="osc-option-select">
+                        <option value="PCLK3_SELECT_DIV_1" selected>&#247;1</option>
+                        <option value="PCLK3_SELECT_DIV_2">&#247;2</option>
+                        <option value="PCLK3_SELECT_DIV_4">&#247;4</option>
+                        <option value="PCLK3_SELECT_DIV_8">&#247;8</option>
+                        <option value="PCLK3_SELECT_DIV_16">&#247;16</option>
+                    </select>
+                        <label>APB3 peripheral clocks(pclk3):</label>
+                    <div class="inputvalueClock clock-readout" id="d1-pclk3-div-select-ck">64000000 <span>Hz</span></div>
+                </div>
+            </div>
+            <div class="domain-modules">
+                <div class="osc-select-option">
+                    <label for="d1-per-ck-src-select">PER_CK Source:</label>
+                    <select id="d1-per-ck-src-select" class="osc-option-select">
+                        <option value="PER_CK_SELECT_SRC_HSI_KER" selected>HSI_KER</option>
+                        <option value="PER_CK_SELECT_SRC_CSI_KER">CSI_KER</option>
+                        <option value="PER_CK_SELECT_SRC_HSE_CK">HSE_CK</option>
+                        <option value="PER_CK_SELECT_SRC_DISABLE">DISABLE</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d1-sdmmc-ker-select">SDMMC Ker:</label>
+                    <select id="d1-sdmmc-ker-select" class="osc-option-select">
+                        <option value="SDMMC_KER_SELECT_SRC_PLL1_Q_CK" selected>PLL1_Q</option>
+                        <option value="SDMMC_KER_SELECT_SRC_PLL2_R_CK">PLL2_R</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d1-qspi-ker-select">QSPI Ker:</label>
+                    <select id="d1-qspi-ker-select" class="osc-option-select">
+                        <option value="SQUADSPI_KER_SELECT_SRC_RCC_HCLK3" selected>HCLK3</option>
+                        <option value="SQUADSPI_KER_SELECT_SRC_PLL1_Q_CK">PLL1_Q</option>
+                        <option value="SQUADSPI_KER_SELECT_SRC_PLL2_R_CK">PLL2_R</option>
+                        <option value="SQUADSPI_KER_SELECT_SRC_PER_CK">PER_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d1-fmc-ker-select">FMC Ker:</label>
+                    <select id="d1-fmc-ker-select" class="osc-option-select">
+                        <option value="FMC_KER_SELECT_SRC_RCC_HCLK3" selected>HCLK3</option>
+                        <option value="FMC_KER_SELECT_SRC_PLL1_Q_CK">PLL1_Q</option>
+                        <option value="FMC_KER_SELECT_SRC_PLL2_R_CK">PLL2_R</option>
+                        <option value="FMC_KER_SELECT_SRC_PER_CK">PER_CK</option>
+                    </select>
+                </div>
+                <div class="module-group">
+                    <div class="module-group-label">AHB3 Modules (ahb3_modules_enable)</div>
+                    <div class="module-checkboxes">
+                        <label><input type="checkbox" id="d1-ahb3-mdma" value="AHB3_MODULE_MDMA"> MDMA</label>
+                        <label><input type="checkbox" id="d1-ahb3-dma2d" value="AHB3_MODULE_DMA2D"> DMA2D</label>
+                        <label><input type="checkbox" id="d1-ahb3-jpgdec" value="AHB3_MODULE_JPGDEC"> JPGDEC</label>
+                        <label><input type="checkbox" id="d1-ahb3-fmc" value="AHB3_MODULE_FMC"> FMC</label>
+                        <label><input type="checkbox" id="d1-ahb3-qspi" value="AHB3_MODULE_QSPI"> QSPI</label>
+                        <label><input type="checkbox" id="d1-ahb3-sdmmc1" value="AHB3_MODULE_SDMMC1"> SDMMC1</label>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <div class="module-group-label">APB3 Modules (apb3_modules_enable)</div>
+                    <div class="module-checkboxes">
+                        <label><input type="checkbox" id="d1-apb3-ltdc" value="APB3_MODULE_LTDC"> LTDC</label>
+                        <label><input type="checkbox" id="d1-apb3-wwdg1" value="APB3_MODULE_WWDG1"> WWDG1</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Domain 2 block: D2 - AHB1 / AHB2 / APB1 / APB2 -->
+        <div id="domain2-block-id" class="OscBlock domain-block domain2-block">
+            <div class="nameClock">Domain 2 (AHB1 / AHB2 / APB1 / APB2)</div>
+            <div class="domain-selects">
+                <div class="osc-select-option">
+                    <label>AHB1&2 peripheral clocks(hclk1 & hclk2):</label>
+                    <div class="inputvalueClock clock-readout" id="hclk1-hclk2-ck">64000000 <span>Hz</span></div>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-pclk1-div-select">D2PPRE1:</label>
+                    <select id="d2-pclk1-div-select" class="osc-option-select">
+                        <option value="PCLK1_SELECT_DIV_1" selected>&#247;1</option>
+                        <option value="PCLK1_SELECT_DIV_2">&#247;2</option>
+                        <option value="PCLK1_SELECT_DIV_4">&#247;4</option>
+                        <option value="PCLK1_SELECT_DIV_8">&#247;8</option>
+                        <option value="PCLK1_SELECT_DIV_16">&#247;16</option>
+                    </select>
+                    <label>APB1 peripheral clocks(pclk1):</label>
+                    <div class="inputvalueClock clock-readout" id="d2-pclk1-div-select-ck">64000000 <span>Hz</span></div>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-pclk2-div-select">D2PPRE2:</label>
+                    <select id="d2-pclk2-div-select" class="osc-option-select">
+                        <option value="PCLK2_SELECT_DIV_1" selected>&#247;1</option>
+                        <option value="PCLK2_SELECT_DIV_2">&#247;2</option>
+                        <option value="PCLK2_SELECT_DIV_4">&#247;4</option>
+                        <option value="PCLK2_SELECT_DIV_8">&#247;8</option>
+                        <option value="PCLK2_SELECT_DIV_16">&#247;16</option>
+                    </select>
+                    <label>APB2 peripheral clocks(pclk2):</label>
+                    <div class="inputvalueClock clock-readout" id="d2-pclk2-div-select-ck">64000000 <span>Hz</span></div>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-timers-type-select">Timers PCLK Type:</label>
+                    <select id="d2-timers-type-select" class="osc-option-select">
+                        <option value="TIMERS_KER_PCLKX_TYPE_X2" selected>type x2</option>
+                        <option value="TIMERS_KER_PCLKX_TYPE_X4">type x4</option>
+                    </select>
+                    <label>Timers prescaler clock(rcc_timx_ker_ck):</label>
+                    <div class="inputvalueClock clock-readout" id="d2-timerx-type-select-ck">64000000 <span>Hz</span></div>
+                    <label>Timers prescaler clock(rcc_timy_ker_ck):</label>
+                    <div class="inputvalueClock clock-readout" id="d2-timery-type-select-ck">64000000 <span>Hz</span></div>
+                </div>
+            </div>
+            <div class="domain-modules">
+                <div class="osc-select-option">
+                    <label for="d2-hrtimer-src-select">HRTIMER Source:</label>
+                    <select id="d2-hrtimer-src-select" class="osc-option-select">
+                        <option value="HRTIMER_SELECT_SRC_PLCK2" selected>PCLK2</option>
+                        <option value="HRTIMER_SELECT_SRC_CPU_CLOCK">CPU_CLK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-sai1-dfsdm-ker-select">SAI1/DFSDM1 Ker:</label>
+                    <select id="d2-sai1-dfsdm-ker-select" class="osc-option-select">
+                        <option value="SAI1_DFSDM1_KER_SELECT_SRC_PLL1_Q_CK" selected>PLL1_Q</option>
+                        <option value="SAI1_DFSDM1_KER_SELECT_SRC_PLL2_P_CK">PLL2_P</option>
+                        <option value="SAI1_DFSDM1_KER_SELECT_SRC_PLL3_P_CK">PLL3_P</option>
+                        <option value="SAI1_DFSDM1_KER_SELECT_SRC_I2S_CKIN">I2S_CKIN</option>
+                        <option value="SAI1_DFSDM1_KER_SELECT_SRC_PER_CK">PER_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-sai23-ker-select">SAI2/3 Ker:</label>
+                    <select id="d2-sai23-ker-select" class="osc-option-select">
+                        <option value="SAI23_KER_SELECT_SRC_PLL1_Q_CK" selected>PLL1_Q</option>
+                        <option value="SAI23_KER_SELECT_SRC_PLL2_P_CK">PLL2_P</option>
+                        <option value="SAI23_KER_SELECT_SRC_PLL3_P_CK">PLL3_P</option>
+                        <option value="SAI23_KER_SELECT_SRC_I2S_CKIN">I2S_CKIN</option>
+                        <option value="SAI23_KER_SELECT_SRC_PER_CK">PER_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-spi123-ker-select">SPI1/2/3 Ker:</label>
+                    <select id="d2-spi123-ker-select" class="osc-option-select">
+                        <option value="SPI123_KER_SELECT_SRC_PLL1_Q_CK" selected>PLL1_Q</option>
+                        <option value="SPI123_KER_SELECT_SRC_PLL2_P_CK">PLL2_P</option>
+                        <option value="SPI123_KER_SELECT_SRC_PLL3_P_CK">PLL3_P</option>
+                        <option value="SPI123_KER_SELECT_SRC_I2S_CKIN">I2S_CKIN</option>
+                        <option value="SPI123_KER_SELECT_SRC_PER_CK">PER_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-spi45-ker-select">SPI4/5 Ker:</label>
+                    <select id="d2-spi45-ker-select" class="osc-option-select">
+                        <option value="SPI45_KER_SELECT_SRC_APBCLK" selected>APBCLK</option>
+                        <option value="SPI45_KER_SELECT_SRC_PLL2_Q_CK">PLL2_Q</option>
+                        <option value="SPI45_KER_SELECT_SRC_PLL3_Q_CK">PLL3_Q</option>
+                        <option value="SPI45_KER_SELECT_SRC_HSI_KER_CK">HSI_KER</option>
+                        <option value="SPI45_KER_SELECT_SRC_CSI_KER_CK">CSI_KER</option>
+                        <option value="SPI45_KER_SELECT_SRC_HSE_KER_CK">HSE_KER</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-spdifrx-ker-select">SPDIFRX Ker:</label>
+                    <select id="d2-spdifrx-ker-select" class="osc-option-select">
+                        <option value="SPDIFRX_KER_SELECT_SRC_PLL1_Q_CK" selected>PLL1_Q</option>
+                        <option value="SPDIFRX_KER_SELECT_SRC_PLL2_R_CK">PLL2_R</option>
+                        <option value="SPDIFRX_KER_SELECT_SRC_PLL3_R_CK">PLL3_R</option>
+                        <option value="SPDIFRX_KER_SELECT_SRC_HSI_KER_CK">HSI_KER</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-dfsdm1-ker-select">DFSDM1 Ker:</label>
+                    <select id="d2-dfsdm1-ker-select" class="osc-option-select">
+                        <option value="DFSDM1_KER_SELECT_SRC_RCC_PCLK2" selected>PCLK2</option>
+                        <option value="DFSDM1_KER_SELECT_SRC_SYS_CK">SYS_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-fdcan-ker-select">FDCAN Ker:</label>
+                    <select id="d2-fdcan-ker-select" class="osc-option-select">
+                        <option value="FDCAN_KER_SELECT_SRC_HSE_CK" selected>HSE_CK</option>
+                        <option value="FDCAN_KER_SELECT_SRC_PLL1_Q_CK">PLL1_Q</option>
+                        <option value="FDCAN_KER_SELECT_SRC_PLL2_Q_CK">PLL2_Q</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-swpmi-ker-select">SWPMI Ker:</label>
+                    <select id="d2-swpmi-ker-select" class="osc-option-select">
+                        <option value="SWPSEL_KER_SELECT_SRC_PCLK1" selected>PCLK1</option>
+                        <option value="SWPSEL_KER_SELECT_SRC_HSI_CK">HSI_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-usart234578-ker-select">USART2/3, UART4/5/7/8 Ker:</label>
+                    <select id="d2-usart234578-ker-select" class="osc-option-select">
+                        <option value="USART234578_KER_SELECT_SRC_RCC_PCLK1" selected>PCLK1</option>
+                        <option value="USART234578_KER_SELECT_SRC_PLL2_Q_CK">PLL2_Q</option>
+                        <option value="USART234578_KER_SELECT_SRC_PLL3_Q_CK">PLL3_Q</option>
+                        <option value="USART234578_KER_SELECT_SRC_HSI_CK">HSI_CK</option>
+                        <option value="USART234578_KER_SELECT_SRC_CSI_CK">CSI_CK</option>
+                        <option value="USART234578_KER_SELECT_SRC_LSE_CK">LSE_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-usart16-ker-select">USART1/6 Ker:</label>
+                    <select id="d2-usart16-ker-select" class="osc-option-select">
+                        <option value="USART16_KER_SELECT_SRC_RCC_PCLK2" selected>PCLK2</option>
+                        <option value="USART16_KER_SELECT_SRC_PLL2_Q_CK">PLL2_Q</option>
+                        <option value="USART16_KER_SELECT_SRC_PLL3_Q_CK">PLL3_Q</option>
+                        <option value="USART16_KER_SELECT_SRC_HSI_CK">HSI_CK</option>
+                        <option value="USART16_KER_SELECT_SRC_CSI_CK">CSI_CK</option>
+                        <option value="USART16_KER_SELECT_SRC_LSE_CK">LSE_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-rng-ker-select">RNG Ker:</label>
+                    <select id="d2-rng-ker-select" class="osc-option-select">
+                        <option value="RNG_KER_SELECT_SRC_HSI8_CK" selected>HSI48_CK</option>
+                        <option value="RNG_KER_SELECT_SRC_PLL1_Q_CK">PLL1_Q</option>
+                        <option value="RNG_KER_SELECT_SRC_LSE_CK">LSE_CK</option>
+                        <option value="RNG_KER_SELECT_SRC_LSI_CK">LSI_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-i2c123-ker-select">I2C1/2/3 Ker:</label>
+                    <select id="d2-i2c123-ker-select" class="osc-option-select">
+                        <option value="I2C123_KER_SELECT_SRC_RCC_PCLK1" selected>PCLK1</option>
+                        <option value="I2C123_KER_SELECT_SRC_PLL3_R_CK">PLL3_R</option>
+                        <option value="I2C123_KER_SELECT_SRC_HSI_KER_CK">HSI_KER</option>
+                        <option value="I2C123_KER_SELECT_SRC_CSI_KER_CK">CSI_KER</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-usbotg12-ker-select">USB OTG1/2 Ker:</label>
+                    <select id="d2-usbotg12-ker-select" class="osc-option-select">
+                        <option value="USBOTG12_KER_SELECT_SRC_DISABLED" selected>DISABLED</option>
+                        <option value="USBOTG12_KER_SELECT_SRC_PLL1_Q_CK">PLL1_Q</option>
+                        <option value="USBOTG12_KER_SELECT_SRC_PLL3_Q_CK">PLL3_Q</option>
+                        <option value="USBOTG12_KER_SELECT_SRC_HSI48_CK">HSI48_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-hdmicec-ker-select">HDMI-CEC Ker:</label>
+                    <select id="d2-hdmicec-ker-select" class="osc-option-select">
+                        <option value="HDMICEC_KER_SELECT_SRC_LSE_CK" selected>LSE_CK</option>
+                        <option value="HDMICEC_KER_SELECT_SRC_LSI_CK">LSI_CK</option>
+                        <option value="HDMICEC_KER_SELECT_SRC_CSI_CK_DIV122">CSI/122</option>
+                        <option value="HDMICEC_KER_SELECT_SRC_DISABLED">DISABLED</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d2-lptim1-ker-select">LPTIM1 Ker:</label>
+                    <select id="d2-lptim1-ker-select" class="osc-option-select">
+                        <option value="LPTIM1_KER_SELECT_SRC_RCC_PCLK1" selected>PCLK1</option>
+                        <option value="LPTIM1_KER_SELECT_SRC_PLL2_P_CK">PLL2_P</option>
+                        <option value="LPTIM1_KER_SELECT_SRC_PLL3_R_CK">PLL3_R</option>
+                        <option value="LPTIM1_KER_SELECT_SRC_LSE_CK">LSE_CK</option>
+                        <option value="LPTIM1_KER_SELECT_SRC_LSI_CK">LSI_CK</option>
+                        <option value="LPTIM1_KER_SELECT_SRC_PER_CK">PER_CK</option>
+                    </select>
+                </div>
+                <div class="module-group">
+                    <div class="module-group-label">AHB1 Modules (ahb1_modules_enable)</div>
+                    <div class="module-checkboxes">
+                        <label><input type="checkbox" id="d2-ahb1-dma1" value="AHB1_MODULE_DMA1"> DMA1</label>
+                        <label><input type="checkbox" id="d2-ahb1-dma2" value="AHB1_MODULE_DMA2"> DMA2</label>
+                        <label><input type="checkbox" id="d2-ahb1-dmamux" value="AHB1_MODULE_DMAMUX"> DMAMUX</label>
+                        <label><input type="checkbox" id="d2-ahb1-adc12" value="AHB1_MODULE_ADC12"> ADC12</label>
+                        <label><input type="checkbox" id="d2-ahb1-eth1mac" value="AHB1_MODULE_ETH1MAC"> ETH1MAC</label>
+                        <label><input type="checkbox" id="d2-ahb1-eth1tx" value="AHB1_MODULE_ETH1TX"> ETH1TX</label>
+                        <label><input type="checkbox" id="d2-ahb1-eth1rx" value="AHB1_MODULE_ETH1RX"> ETH1RX</label>
+                        <label><input type="checkbox" id="d2-ahb1-usb1hs" value="AHB1_MODULE_USB1OTGHS"> USB1OTG</label>
+                        <label><input type="checkbox" id="d2-ahb1-usb2hs" value="AHB1_MODULE_USB2OTGHS"> USB2OTG</label>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <div class="module-group-label">AHB2 Modules (ahb2_modules_enable)</div>
+                    <div class="module-checkboxes">
+                        <label><input type="checkbox" id="d2-ahb2-dcmi" value="AHB2_MODULE_DCMI"> DCMI</label>
+                        <label><input type="checkbox" id="d2-ahb2-cryp" value="AHB2_MODULE_CRYP"> CRYP</label>
+                        <label><input type="checkbox" id="d2-ahb2-hash" value="AHB2_MODULE_HASH"> HASH</label>
+                        <label><input type="checkbox" id="d2-ahb2-rng" value="AHB2_MODULE_RNG"> RNG</label>
+                        <label><input type="checkbox" id="d2-ahb2-sdmmc2" value="AHB2_MODULE_SDMMC2"> SDMMC2</label>
+                        <label><input type="checkbox" id="d2-ahb2-sram1" value="AHB2_MODULE_SRAM1"> SRAM1</label>
+                        <label><input type="checkbox" id="d2-ahb2-sram2" value="AHB2_MODULE_SRAM2"> SRAM2</label>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <div class="module-group-label">APB1L Modules (apb1l_modules_enable)</div>
+                    <div class="module-checkboxes">
+                        <label><input type="checkbox" id="d2-apb1l-tim2" value="APB1L_MODULE_TIM2"> TIM2</label>
+                        <label><input type="checkbox" id="d2-apb1l-tim3" value="APB1L_MODULE_TIM3"> TIM3</label>
+                        <label><input type="checkbox" id="d2-apb1l-tim4" value="APB1L_MODULE_TIM4"> TIM4</label>
+                        <label><input type="checkbox" id="d2-apb1l-tim5" value="APB1L_MODULE_TIM5"> TIM5</label>
+                        <label><input type="checkbox" id="d2-apb1l-tim6" value="APB1L_MODULE_TIM6"> TIM6</label>
+                        <label><input type="checkbox" id="d2-apb1l-tim7" value="APB1L_MODULE_TIM7"> TIM7</label>
+                        <label><input type="checkbox" id="d2-apb1l-tim12" value="APB1L_MODULE_TIM12"> TIM12</label>
+                        <label><input type="checkbox" id="d2-apb1l-tim13" value="APB1L_MODULE_TIM13"> TIM13</label>
+                        <label><input type="checkbox" id="d2-apb1l-tim14" value="APB1L_MODULE_TIM14"> TIM14</label>
+                        <label><input type="checkbox" id="d2-apb1l-lptim1" value="APB1L_MODULE_LPTIM1"> LPTIM1</label>
+                        <label><input type="checkbox" id="d2-apb1l-spi2" value="APB1L_MODULE_SPI2"> SPI2</label>
+                        <label><input type="checkbox" id="d2-apb1l-spi3" value="APB1L_MODULE_SPI3"> SPI3</label>
+                        <label><input type="checkbox" id="d2-apb1l-spdifrx" value="APB1L_MODULE_SPDIFRX"> SPDIFRX</label>
+                        <label><input type="checkbox" id="d2-apb1l-usart2" value="APB1L_MODULE_USART2"> USART2</label>
+                        <label><input type="checkbox" id="d2-apb1l-usart3" value="APB1L_MODULE_USART3"> USART3</label>
+                        <label><input type="checkbox" id="d2-apb1l-uart4" value="APB1L_MODULE_UART4"> UART4</label>
+                        <label><input type="checkbox" id="d2-apb1l-uart5" value="APB1L_MODULE_UART5"> UART5</label>
+                        <label><input type="checkbox" id="d2-apb1l-i2c1" value="APB1L_MODULE_I2C1"> I2C1</label>
+                        <label><input type="checkbox" id="d2-apb1l-i2c2" value="APB1L_MODULE_I2C2"> I2C2</label>
+                        <label><input type="checkbox" id="d2-apb1l-i2c3" value="APB1L_MODULE_I2C3"> I2C3</label>
+                        <label><input type="checkbox" id="d2-apb1l-cec" value="APB1L_MODULE_CEC"> CEC</label>
+                        <label><input type="checkbox" id="d2-apb1l-dac12" value="APB1L_MODULE_DAC12"> DAC12</label>
+                        <label><input type="checkbox" id="d2-apb1l-uart7" value="APB1L_MODULE_UART7"> UART7</label>
+                        <label><input type="checkbox" id="d2-apb1l-uart8" value="APB1L_MODULE_UART8"> UART8</label>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <div class="module-group-label">APB1H Modules (apb1h_modules_enable)</div>
+                    <div class="module-checkboxes">
+                        <label><input type="checkbox" id="d2-apb1h-crs" value="APB1H_MODULE_CRS"> CRS</label>
+                        <label><input type="checkbox" id="d2-apb1h-swpmi1" value="APB1H_MODULE_SWPMI1"> SWPMI1</label>
+                        <label><input type="checkbox" id="d2-apb1h-opamp" value="APB1H_MODULE_OPAMP"> OPAMP</label>
+                        <label><input type="checkbox" id="d2-apb1h-mdios" value="APB1H_MODULE_MDIOS"> MDIOS</label>
+                        <label><input type="checkbox" id="d2-apb1h-fdcan" value="APB1H_MODULE_FDCAN"> FDCAN</label>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <div class="module-group-label">APB2 Modules (apb2_modules_enable)</div>
+                    <div class="module-checkboxes">
+                        <label><input type="checkbox" id="d2-apb2-tim1" value="APB2_MODULE_TIM1"> TIM1</label>
+                        <label><input type="checkbox" id="d2-apb2-tim8" value="APB2_MODULE_TIM8"> TIM8</label>
+                        <label><input type="checkbox" id="d2-apb2-usart1" value="APB2_MODULE_USART1"> USART1</label>
+                        <label><input type="checkbox" id="d2-apb2-usart6" value="APB2_MODULE_USART6"> USART6</label>
+                        <label><input type="checkbox" id="d2-apb2-spi1" value="APB2_MODULE_SPI1"> SPI1</label>
+                        <label><input type="checkbox" id="d2-apb2-spi4" value="APB2_MODULE_SPI4"> SPI4</label>
+                        <label><input type="checkbox" id="d2-apb2-spi5" value="APB2_MODULE_SPI5"> SPI5</label>
+                        <label><input type="checkbox" id="d2-apb2-tim15" value="APB2_MODULE_TIM15"> TIM15</label>
+                        <label><input type="checkbox" id="d2-apb2-tim16" value="APB2_MODULE_TIM16"> TIM16</label>
+                        <label><input type="checkbox" id="d2-apb2-tim17" value="APB2_MODULE_TIM17"> TIM17</label>
+                        <label><input type="checkbox" id="d2-apb2-sai1" value="APB2_MODULE_SAI1"> SAI1</label>
+                        <label><input type="checkbox" id="d2-apb2-sai2" value="APB2_MODULE_SAI2"> SAI2</label>
+                        <label><input type="checkbox" id="d2-apb2-sai3" value="APB2_MODULE_SAI3"> SAI3</label>
+                        <label><input type="checkbox" id="d2-apb2-dfsdm1" value="APB2_MODULE_DFSDM1"> DFSDM1</label>
+                        <label><input type="checkbox" id="d2-apb2-hrtim" value="APB2_MODULE_HRTIM"> HRTIM</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Domain 3 block: D3 - AHB4 / APB4 -->
+        <div id="domain3-block-id" class="OscBlock domain-block domain3-block">
+            <div class="nameClock">Domain 3 (AHB4 / APB4)</div>
+            <div class="domain-selects">
+                <div class="osc-select-option">
+                    <label>AHB4 peripheral clocks(hclk4):</label>
+                    <div class="inputvalueClock clock-readout" id="hclk4-ck">64000000 <span>Hz</span></div>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d3-pclk4-div-select">D3PPRE:</label>
+                    <select id="d3-pclk4-div-select" class="osc-option-select">
+                        <option value="PCLK4_SELECT_DIV_1" selected>&#247;1</option>
+                        <option value="PCLK4_SELECT_DIV_2">&#247;2</option>
+                        <option value="PCLK4_SELECT_DIV_4">&#247;4</option>
+                        <option value="PCLK4_SELECT_DIV_8">&#247;8</option>
+                        <option value="PCLK4_SELECT_DIV_16">&#247;16</option>
+                    </select>
+                    <label>APB4 peripheral clocks(pclk4):</label>
+                    <div class="inputvalueClock clock-readout" id="d3-pclk4-div-select-ck">64000000 <span>Hz</span></div>
+                </div>
+            </div>
+            <div class="domain-modules">
+                <div class="osc-select-option">
+                    <label for="d3-lpuart1-ker-select">LPUART1 Ker:</label>
+                    <select id="d3-lpuart1-ker-select" class="osc-option-select">
+                        <option value="LPUART1_KER_SELECT_SRC_RCC_PCLK4" selected>PCLK4</option>
+                        <option value="LPUART1_KER_SELECT_SRC_PLL2_Q_CK">PLL2_Q</option>
+                        <option value="LPUART1_KER_SELECT_SRC_PLL3_Q_CK">PLL3_Q</option>
+                        <option value="LPUART1_KER_SELECT_SRC_HSI_CK">HSI_CK</option>
+                        <option value="LPUART1_KER_SELECT_SRC_CSI_CK">CSI_CK</option>
+                        <option value="LPUART1_KER_SELECT_SRC_LSE_CK">LSE_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d3-i2c4-ker-select">I2C4 Ker:</label>
+                    <select id="d3-i2c4-ker-select" class="osc-option-select">
+                        <option value="I2C4_KER_SELECT_SRC_RCC_PCLK4" selected>PCLK4</option>
+                        <option value="I2C4_KER_SELECT_SRC_PLL3_R_CK">PLL3_R</option>
+                        <option value="I2C4_KER_SELECT_SRC_HSI_CK">HSI_CK</option>
+                        <option value="I2C4_KER_SELECT_SRC_CSI_CK">CSI_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d3-lptim2-ker-select">LPTIM2 Ker:</label>
+                    <select id="d3-lptim2-ker-select" class="osc-option-select">
+                        <option value="LPTIM2_KER_SELECT_SRC_RCC_PCLK4" selected>PCLK4</option>
+                        <option value="LPTIM2_KER_SELECT_SRC_PLL2_P_CK">PLL2_P</option>
+                        <option value="LPTIM2_KER_SELECT_SRC_PLL3_R_CK">PLL3_R</option>
+                        <option value="LPTIM2_KER_SELECT_SRC_LSE_CK">LSE_CK</option>
+                        <option value="LPTIM2_KER_SELECT_SRC_LSI_CK">LSI_CK</option>
+                        <option value="LPTIM2_KER_SELECT_SRC_PER_CK">PER_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d3-lptim345-ker-select">LPTIM3/4/5 Ker:</label>
+                    <select id="d3-lptim345-ker-select" class="osc-option-select">
+                        <option value="LPTIM345_KER_SELECT_SRC_RCC_PCLK4" selected>PCLK4</option>
+                        <option value="LPTIM345_KER_SELECT_SRC_PLL2_P_CK">PLL2_P</option>
+                        <option value="LPTIM345_KER_SELECT_SRC_PLL3_R_CK">PLL3_R</option>
+                        <option value="LPTIM345_KER_SELECT_SRC_LSE_CK">LSE_CK</option>
+                        <option value="LPTIM345_KER_SELECT_SRC_LSI_CK">LSI_CK</option>
+                        <option value="LPTIM345_KER_SELECT_SRC_PER_CK">PER_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d3-adc-ker-select">ADC Ker:</label>
+                    <select id="d3-adc-ker-select" class="osc-option-select">
+                        <option value="ADC_KER_SELECT_SRC_PLL2_P_CK" selected>PLL2_P</option>
+                        <option value="ADC_KER_SELECT_SRC_PLL3_R_CK">PLL3_R</option>
+                        <option value="ADC_KER_SELECT_SRC_PER_CK">PER_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d3-sai4a-ker-select">SAI4A Ker:</label>
+                    <select id="d3-sai4a-ker-select" class="osc-option-select">
+                        <option value="SAI4A_KER_SELECT_SRC_PLL1_Q_CK" selected>PLL1_Q</option>
+                        <option value="SAI4A_KER_SELECT_SRC_PLL2_P_CK">PLL2_P</option>
+                        <option value="SAI4A_KER_SELECT_SRC_PLL3_P_CK">PLL3_P</option>
+                        <option value="SAI4A_KER_SELECT_SRC_I2S_CKIN">I2S_CKIN</option>
+                        <option value="SAI4A_KER_SELECT_SRC_PER_CK">PER_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d3-sai4b-ker-select">SAI4B Ker:</label>
+                    <select id="d3-sai4b-ker-select" class="osc-option-select">
+                        <option value="SAI4B_KER_SELECT_SRC_PLL1_Q_CK" selected>PLL1_Q</option>
+                        <option value="SAI4B_KER_SELECT_SRC_PLL2_P_CK">PLL2_P</option>
+                        <option value="SAI4B_KER_SELECT_SRC_PLL3_P_CK">PLL3_P</option>
+                        <option value="SAI4B_KER_SELECT_SRC_I2S_CKIN">I2S_CKIN</option>
+                        <option value="SAI4B_KER_SELECT_SRC_PER_CK">PER_CK</option>
+                    </select>
+                </div>
+                <div class="osc-select-option">
+                    <label for="d3-spi6-ker-select">SPI6 Ker:</label>
+                    <select id="d3-spi6-ker-select" class="osc-option-select">
+                        <option value="SPI6_KER_SELECT_SRC_RCC_PCLK4" selected>PCLK4</option>
+                        <option value="SPI6_KER_SELECT_SRC_PLL2_Q_CK">PLL2_Q</option>
+                        <option value="SPI6_KER_SELECT_SRC_PLL3_Q_CK">PLL3_Q</option>
+                        <option value="SPI6_KER_SELECT_SRC_HSI_CK">HSI_CK</option>
+                        <option value="SPI6_KER_SELECT_SRC_CSI_CK">CSI_CK</option>
+                        <option value="SPI6_KER_SELECT_SRC_HSE_CK">HSE_CK</option>
+                    </select>
+                </div>
+                <div class="module-group">
+                    <div class="module-group-label">AHB4 Modules (ahb4_modules_enable)</div>
+                    <div class="module-checkboxes">
+                        <label><input type="checkbox" id="d3-ahb4-gpioa" value="AHB4_MODULE_GPIOA"> GPIOA</label>
+                        <label><input type="checkbox" id="d3-ahb4-gpiob" value="AHB4_MODULE_GPIOB"> GPIOB</label>
+                        <label><input type="checkbox" id="d3-ahb4-gpioc" value="AHB4_MODULE_GPIOC"> GPIOC</label>
+                        <label><input type="checkbox" id="d3-ahb4-gpiod" value="AHB4_MODULE_GPIOD"> GPIOD</label>
+                        <label><input type="checkbox" id="d3-ahb4-gpioe" value="AHB4_MODULE_GPIOE"> GPIOE</label>
+                        <label><input type="checkbox" id="d3-ahb4-gpiof" value="AHB4_MODULE_GPIOF"> GPIOF</label>
+                        <label><input type="checkbox" id="d3-ahb4-gpiog" value="AHB4_MODULE_GPIOG"> GPIOG</label>
+                        <label><input type="checkbox" id="d3-ahb4-gpioh" value="AHB4_MODULE_GPIOH"> GPIOH</label>
+                        <label><input type="checkbox" id="d3-ahb4-gpioi" value="AHB4_MODULE_GPIOI"> GPIOI</label>
+                        <label><input type="checkbox" id="d3-ahb4-gpioj" value="AHB4_MODULE_GPIOJ"> GPIOJ</label>
+                        <label><input type="checkbox" id="d3-ahb4-gpiok" value="AHB4_MODULE_GPIOK"> GPIOK</label>
+                        <label><input type="checkbox" id="d3-ahb4-crc" value="AHB4_MODULE_CRC"> CRC</label>
+                        <label><input type="checkbox" id="d3-ahb4-bdma" value="AHB4_MODULE_BDMA"> BDMA</label>
+                        <label><input type="checkbox" id="d3-ahb4-adc3" value="AHB4_MODULE_ADC3"> ADC3</label>
+                        <label><input type="checkbox" id="d3-ahb4-hsem" value="AHB4_MODULE_HSEM"> HSEM</label>
+                        <label><input type="checkbox" id="d3-ahb4-bkpram" value="AHB4_MODULE_BKPRAM"> BKPRAM</label>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <div class="module-group-label">APB4 Modules (apb4_modules_enable)</div>
+                    <div class="module-checkboxes">
+                        <label><input type="checkbox" id="d3-apb4-syscfg" value="APB4_MODULE_SYSCFG"> SYSCFG</label>
+                        <label><input type="checkbox" id="d3-apb4-lpuart1" value="APB4_MODULE_LPUART1"> LPUART1</label>
+                        <label><input type="checkbox" id="d3-apb4-spi6" value="APB4_MODULE_SPI6"> SPI6</label>
+                        <label><input type="checkbox" id="d3-apb4-i2c4" value="APB4_MODULE_I2C4"> I2C4</label>
+                        <label><input type="checkbox" id="d3-apb4-lptim2" value="APB4_MODULE_LPTIM2"> LPTIM2</label>
+                        <label><input type="checkbox" id="d3-apb4-lptim3" value="APB4_MODULE_LPTIM3"> LPTIM3</label>
+                        <label><input type="checkbox" id="d3-apb4-lptim4" value="APB4_MODULE_LPTIM4"> LPTIM4</label>
+                        <label><input type="checkbox" id="d3-apb4-lptim5" value="APB4_MODULE_LPTIM5"> LPTIM5</label>
+                        <label><input type="checkbox" id="d3-apb4-comp12" value="APB4_MODULE_COMP12"> COMP12</label>
+                        <label><input type="checkbox" id="d3-apb4-vref" value="APB4_MODULE_VREF"> VREF</label>
+                        <label><input type="checkbox" id="d3-apb4-rtcapb" value="APB4_MODULE_RTCAPB"> RTCAPB</label>
+                        <label><input type="checkbox" id="d3-apb4-sai4" value="APB4_MODULE_SAI4"> SAI4</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clockoutputContainer" id="clock-outputs-id">
+    <div id="mco1-output-id" class="OscBlock system-block">
+        <div class="nameClock">mco1</div>
+        <div id="mco1-src-id" class="osc-select-option">
+            <div class="osc-select-option">
+                <label for="mco1-src-select">MCO1 Source:</label>
+                <select id="mco1-src-select" class="osc-option-select">
+                    <option value="MCO1_SELECT_SRC_HSI" selected>HSI</option>
+                    <option value="MCO1_SELECT_SRC_LSE">LSE</option>
+                    <option value="MCO1_SELECT_SRC_HSE">HSE</option>
+                    <option value="MCO1_SELECT_SRC_PLL1_Q">PLL1_Q</option>
+                    <option value="MCO1_SELECT_SRC_HSI48">HSI48</option>
+                </select>
+            </div>
+            <div class="osc-select-option">
+                <label for="mco1-div-select">MCO1 Div:</label>
+                <select id="mco1-div-select" class="osc-option-select">
+                    <option value="MCO_DISABLE" selected>disabled</option>
+                    <option value="MCO_DIV_1">&#247;1</option>
+                    <option value="MCO_DIV_2">&#247;2</option>
+                    <option value="MCO_DIV_3">&#247;3</option>
+                    <option value="MCO_DIV_4">&#247;4</option>
+                    <option value="MCO_DIV_5">&#247;5</option>
+                    <option value="MCO_DIV_6">&#247;6</option>
+                    <option value="MCO_DIV_7">&#247;7</option>
+                    <option value="MCO_DIV_8">&#247;8</option>
+                    <option value="MCO_DIV_9">&#247;9</option>
+                    <option value="MCO_DIV_10">&#247;10</option>
+                    <option value="MCO_DIV_11">&#247;11</option>
+                    <option value="MCO_DIV_12">&#247;12</option>
+                    <option value="MCO_DIV_13">&#247;13</option>
+                    <option value="MCO_DIV_14">&#247;14</option>
+                    <option value="MCO_DIV_15">&#247;15</option>
+                </select>
+                <label>MCO1 clocks:</label>
+                <div class="inputvalueClock clock-readout" id="mco1-src-ck">0 <span>Hz</span></div>
+            </div>
+        </div>
+    </div>
+    <div id="mco2-output-id" class="OscBlock system-block">
+        <div class="nameClock">mco2</div>
+        <div id="mco2-src-id" class="osc-select-option">
+            <div class="osc-select-option">
+                <label for="mco2-src-select">MCO2 Source:</label>
+                <select id="mco2-src-select" class="osc-option-select">
+                    <option value="MCO2_SELECT_SRC_SYS" selected>System clock</option>
+                    <option value="MCO2_SELECT_SRC_PLL2_P">PLL2_P</option>
+                    <option value="MCO2_SELECT_SRC_HSE">HSE</option>
+                    <option value="MCO2_SELECT_SRC_PLL1_P">PLL1_P</option>
+                    <option value="MCO2_SELECT_SRC_CSI">CSI</option>
+                    <option value="MCO2_SELECT_SRC_LSI">LSI</option>
+                </select>
+            </div>
+            <div class="osc-select-option">
+                <label for="mco2-div-select">MCO2 Div:</label>
+                <select id="mco2-div-select" class="osc-option-select">
+                    <option value="MCO_DISABLE" selected>disabled</option>
+                    <option value="MCO_DIV_1">&#247;1</option>
+                    <option value="MCO_DIV_2">&#247;2</option>
+                    <option value="MCO_DIV_3">&#247;3</option>
+                    <option value="MCO_DIV_4">&#247;4</option>
+                    <option value="MCO_DIV_5">&#247;5</option>
+                    <option value="MCO_DIV_6">&#247;6</option>
+                    <option value="MCO_DIV_7">&#247;7</option>
+                    <option value="MCO_DIV_8">&#247;8</option>
+                    <option value="MCO_DIV_9">&#247;9</option>
+                    <option value="MCO_DIV_10">&#247;10</option>
+                    <option value="MCO_DIV_11">&#247;11</option>
+                    <option value="MCO_DIV_12">&#247;12</option>
+                    <option value="MCO_DIV_13">&#247;13</option>
+                    <option value="MCO_DIV_14">&#247;14</option>
+                    <option value="MCO_DIV_15">&#247;15</option>
+                </select>
+                <label>MCO2 clocks:</label>
+                <div class="inputvalueClock clock-readout" id="mco2-src-ck">0 <span>Hz</span></div>
+            </div>
+        </div>
+    </div>
+    <div id="rtc-output-id" class="OscBlock system-block">
+        <div class="nameClock">RTC Clock</div>
+        <div class="osc-select-option">
+            <label for="rtc-enable-select">RTC Enable:</label>
+            <select id="rtc-enable-select" class="osc-option-select">
+                <option value="RTC_ENABLE_OFF" selected>OFF</option>
+                <option value="RTC_ENABLE_ON">ON</option>
+            </select>
+        </div>
+        <div class="osc-select-option">
+            <label for="rtc-src-select">RTC Source:</label>
+            <select id="rtc-src-select" class="osc-option-select">
+                <option value="RTC_SELECT_NONE" selected>None</option>
+                <option value="RTC_SELECT_SRC_LSE">LSE</option>
+                <option value="RTC_SELECT_SRC_LSI">LSI</option>
+                <option value="RTC_SELECT_SRC_HSE_1MHZ">HSE lower or equal 1MHz</option>
+            </select>
+            <label>RTC clocks:</label>
+            <div class="inputvalueClock clock-readout" id="rtc-src-ck">0 <span>Hz</span></div>
+        </div>
+    </div>
+    <div id="i2s-clock-id" class="OscBlock system-block">
+        <div class="nameClock">I2S Input Clock</div>
+        <input type="number" id="i2s-input-ck" class="osc-option-select" value="0">
+    </div>
+    <div id="clockcfg-block-id" class="OscBlock system-block">
+        <div class="nameClock">Clock Config</div>
+        <div class="osc-select-option">
+            <label>ISR Select:</label>
+            <div id="clockcfg-isr-group" class="checkbox-group">
+                <label><input type="checkbox" name="clockcfg-isr" value="STM32_CLOCK_ISR_SELECT_LSIRDY_ISR"> LSIRDY</label>
+                <label><input type="checkbox" name="clockcfg-isr" value="STM32_CLOCK_ISR_SELECT_LSERDY_ISR"> LSERDY</label>
+                <label><input type="checkbox" name="clockcfg-isr" value="STM32_CLOCK_ISR_SELECT_HSIRDY_ISR"> HSIRDY</label>
+                <label><input type="checkbox" name="clockcfg-isr" value="STM32_CLOCK_ISR_SELECT_HSERDY_ISR"> HSERDY</label>
+                <label><input type="checkbox" name="clockcfg-isr" value="STM32_CLOCK_ISR_SELECT_CSIRDY_ISR"> CSIRDY</label>
+                <label><input type="checkbox" name="clockcfg-isr" value="STM32_CLOCK_ISR_SELECT_HSI48RDY_ISR"> HSI48RDY</label>
+                <label><input type="checkbox" name="clockcfg-isr" value="STM32_CLOCK_ISR_SELECT_PLL1RDY_ISR"> PLL1RDY</label>
+                <label><input type="checkbox" name="clockcfg-isr" value="STM32_CLOCK_ISR_SELECT_PLL2RDY_ISR"> PLL2RDY</label>
+                <label><input type="checkbox" name="clockcfg-isr" value="STM32_CLOCK_ISR_SELECT_PLL3RDY_ISR"> PLL3RDY</label>
+                <label><input type="checkbox" name="clockcfg-isr" value="STM32_CLOCK_ISR_SELECT_LSECSS_ISR"> LSECSS</label>
+                <label><input type="checkbox" name="clockcfg-isr" value="STM32_CLOCK_ISR_SELECT_HSECSS_ISR"> HSECSS</label>
+            </div>
+        </div>
+        <div class="osc-select-option">
+            <label for="clockcfg-isr-priority">ISR Priority:</label>
+            <input id="clockcfg-isr-priority" type="number" min="0" max="15" value="0" class="osc-option-select">
+        </div>
+        <div class="osc-select-option">
+            <label for="clockcfg-isr-request">ISR Request (IRQn):</label>
+            <input id="clockcfg-isr-request" type="text" value="RCC_IRQn" class="osc-option-select">
+        </div>
+        <div class="osc-select-option">
+            <label for="clockcfg-callback">p_callback:</label>
+            <input id="clockcfg-callback" type="text" value="NULL" class="osc-option-select">
+        </div>
+        <div class="osc-select-option">
+            <label for="clockcfg-context">p_context:</label>
+            <input id="clockcfg-context" type="text" value="NULL" class="osc-option-select">
+        </div>
+    </div>
+</div>
+
+<div class="pllContainer">
+    <div class="nameClock">PLL</div>
+
+    <!-- PLL Common: shared source selector only; prescaler moved into each PLL block -->
+    <div id="pll-common-block-id" class="OscBlock pll-block pll-common-block">
+        <div class="nameClock">PLL Common</div>
+        <div id="pll-src-id" class="osc-select-option">
+            <label for="pll-src-select">PLL Source:</label>
+            <select id="pll-src-select" class="osc-option-select">
+                <option value="PLLCLK_SELECT_SRC_HSI" selected>HSI</option>
+                <option value="PLLCLK_SELECT_SRC_CSI">CSI</option>
+                <option value="PLLCLK_SELECT_SRC_HSE">HSE</option>
+                <option value="PLLCLK_SELECT_SRC_NO_CLK">NO_CLK</option>
+            </select>
+        </div>
+        <div class="pllPrescaler">
+            <div class="inputvalueClock">
+                <label for="pll1-prescaler-id">Prescaler pll1 config:</label>
+                <input id="pll1-prescaler-id" type="number" min="0" max="63" value="1"><br> <span>[1..63, 0=disable]</span>
+                <div class="inputvalueClock" id="ref1Ck">48000000</div>
+            </div>
+            <div class="inputvalueClock">
+                <label for="pll2-prescaler-id">Prescaler pll2 Prescaler:</label>
+                <input id="pll2-prescaler-id" type="number" min="0" max="63" value="1"><br> <span>[1..63, 0=disable]</span>
+                <div class="inputvalueClock" id="ref2Ck">48000000</div>
+            </div>
+            <div class="inputvalueClock">
+                <label for="pll3-prescaler-id">Prescaler pll3 Prescaler:</label>
+                <input id="pll3-prescaler-id" type="number" min="0" max="63" value="1"><br> <span>[1..63, 0=disable]</span>
+                <div class="inputvalueClock" id="ref3Ck">48000000</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PLL1 block -->
+    <div id="pll1-block-id" class="OscBlock pll-block">
+        <div class="nameClock">PLL1 Config</div>
+        <div class="pll-config">
+            <div id="pll1-enable-id" class="osc-select-option">
+                <label for="pll1-enable-select">PLL1 Enable:</label>
+                <select id="pll1-enable-select" class="osc-option-select">
+                    <option value="PLL_ENABLE_OFF">OFF</option>
+                    <option value="PLL_ENABLE_ON" selected>ON</option>
+                </select>
+            </div>
+            <div id="pll1-frac-enable-id" class="osc-select-option pll-frac-group">
+                <label for="pll1-frac-enable-select">Frac Latch:</label>
+                <select id="pll1-frac-enable-select" class="osc-option-select">
+                    <option value="PLL_FRAC_ENABLE_OFF" selected>OFF</option>
+                    <option value="PLL_FRAC_ENABLE_ON">ON</option>
+                </select>
+                <div class="inputvalueClock">
+                    <label for="pll1-frac-value-id">FRACN:</label>
+                    <input id="pll1-frac-value-id" type="number" min="0" max="8191" value="0"><br> <span>[0..8191]</span>
+                </div>
+                <div class="inputvalueClock">
+                    <label for="pll1-divn-id">DIVN:</label>
+                    <input id="pll1-divn-id" type="number" min="4" max="512" value="4"><br> <span>[4..512]</span>
+                </div>
+            </div>
+            <div id="pll1-divp-enable-id" class="osc-select-option">
+                <label for="pll1-divp-enable-select">DIVP Enable:</label>
+                <select id="pll1-divp-enable-select" class="osc-option-select">
+                    <option value="PLL_DIVP_ENABLE_OFF" selected>OFF</option>
+                    <option value="PLL_DIVP_ENABLE_ON">ON</option>
+                </select>
+            </div>
+            <div id="pll1-divq-enable-id" class="osc-select-option">
+                <label for="pll1-divq-enable-select">DIVQ Enable:</label>
+                <select id="pll1-divq-enable-select" class="osc-option-select">
+                    <option value="PLL_DIVQ_ENABLE_OFF" selected>OFF</option>
+                    <option value="PLL_DIVQ_ENABLE_ON">ON</option>
+                </select>
+            </div>
+            <div id="pll1-divr-enable-id" class="osc-select-option">
+                <label for="pll1-divr-enable-select">DIVR Enable:</label>
+                <select id="pll1-divr-enable-select" class="osc-option-select">
+                    <option value="PLL_DIVR_ENABLE_OFF" selected>OFF</option>
+                    <option value="PLL_DIVR_ENABLE_ON">ON</option>
+                </select>
+            </div>
+        </div>
+        <div class="pllPrescaler">
+            <div class="inputvalueClock">
+                <label for="pll1-divp-id">DIVP:</label>
+                <input id="pll1-divp-id" type="number" min="1" max="128" value="1"><br> <span>[1..128]</span>
+                <div class="inputvalueClock" id="pll1-p-value">48000000</div>
+            </div>
+            <div class="inputvalueClock">
+                <label for="pll1-divq-id">DIVQ:</label>
+                <input id="pll1-divq-id" type="number" min="1" max="128" value="1"><br> <span>[1..128]</span>
+                <div class="inputvalueClock" id="pll1-q-value">48000000</div>
+            </div>
+            <div class="inputvalueClock">
+                <label for="pll1-divr-id">DIVR:</label>
+                <input id="pll1-divr-id" type="number" min="1" max="128" value="1"><br> <span>[1..128]</span>
+                <div class="inputvalueClock" id="pll1-r-value">48000000</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PLL2 block -->
+    <div id="pll2-block-id" class="OscBlock pll-block">
+        <div class="nameClock">PLL2 Config</div>
+        <div class="pll-config">
+            <div id="pll2-enable-id" class="osc-select-option">
+                <label for="pll2-enable-select">PLL2 Enable:</label>
+                <select id="pll2-enable-select" class="osc-option-select">
+                    <option value="PLL_ENABLE_OFF">OFF</option>
+                    <option value="PLL_ENABLE_ON" selected>ON</option>
+                </select>
+            </div>
+            <div id="pll2-frac-enable-id" class="osc-select-option pll-frac-group">
+                <label for="pll2-frac-enable-select">Frac Latch:</label>
+                <select id="pll2-frac-enable-select" class="osc-option-select">
+                    <option value="PLL_FRAC_ENABLE_OFF" selected>OFF</option>
+                    <option value="PLL_FRAC_ENABLE_ON">ON</option>
+                </select>
+                <div class="inputvalueClock">
+                    <label for="pll2-frac-value-id">FRACN:</label>
+                    <input id="pll2-frac-value-id" type="number" min="0" max="8191" value="0"><br> <span>[0..8191]</span>
+                </div>
+                <div class="inputvalueClock">
+                    <label for="pll2-divn-id">DIVN:</label>
+                    <input id="pll2-divn-id" type="number" min="4" max="512" value="4"><br> <span>[4..512]</span>
+                </div>
+            </div>
+            <div id="pll2-divp-enable-id" class="osc-select-option">
+                <label for="pll2-divp-enable-select">DIVP Enable:</label>
+                <select id="pll2-divp-enable-select" class="osc-option-select">
+                    <option value="PLL_DIVP_ENABLE_OFF" selected>OFF</option>
+                    <option value="PLL_DIVP_ENABLE_ON">ON</option>
+                </select>
+            </div>
+            <div id="pll2-divq-enable-id" class="osc-select-option">
+                <label for="pll2-divq-enable-select">DIVQ Enable:</label>
+                <select id="pll2-divq-enable-select" class="osc-option-select">
+                    <option value="PLL_DIVQ_ENABLE_OFF" selected>OFF</option>
+                    <option value="PLL_DIVQ_ENABLE_ON">ON</option>
+                </select>
+            </div>
+            <div id="pll2-divr-enable-id" class="osc-select-option">
+                <label for="pll2-divr-enable-select">DIVR Enable:</label>
+                <select id="pll2-divr-enable-select" class="osc-option-select">
+                    <option value="PLL_DIVR_ENABLE_OFF" selected>OFF</option>
+                    <option value="PLL_DIVR_ENABLE_ON">ON</option>
+                </select>
+            </div>
+        </div>
+        <div class="pllPrescaler">
+            <div class="inputvalueClock">
+                <label for="pll2-divp-id">DIVP:</label>
+                <input id="pll2-divp-id" type="number" min="1" max="128" value="1"><br> <span>[1..128]</span>
+                <div class="inputvalueClock" id="pll2-p-value">48000000</div>
+            </div>
+            <div class="inputvalueClock">
+                <label for="pll2-divq-id">DIVQ:</label>
+                <input id="pll2-divq-id" type="number" min="1" max="128" value="1"><br> <span>[1..128]</span>
+                <div class="inputvalueClock" id="pll2-q-value">48000000</div>
+            </div>
+            <div class="inputvalueClock">
+                <label for="pll2-divr-id">DIVR:</label>
+                <input id="pll2-divr-id" type="number" min="1" max="128" value="1"><br> <span>[1..128]</span>
+                <div class="inputvalueClock" id="pll2-r-value">48000000</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PLL3 block -->
+    <div id="pll3-block-id" class="OscBlock pll-block">
+        <div class="nameClock">PLL3 Config</div>
+        <div class="pll-config">
+            <div id="pll3-enable-id" class="osc-select-option">
+                <label for="pll3-enable-select">PLL3 Enable:</label>
+                <select id="pll3-enable-select" class="osc-option-select">
+                    <option value="PLL_ENABLE_OFF">OFF</option>
+                    <option value="PLL_ENABLE_ON" selected>ON</option>
+                </select>
+            </div>
+            <div id="pll3-frac-enable-id" class="osc-select-option pll-frac-group">
+                <label for="pll3-frac-enable-select">Frac Latch:</label>
+                <select id="pll3-frac-enable-select" class="osc-option-select">
+                    <option value="PLL_FRAC_ENABLE_OFF" selected>OFF</option>
+                    <option value="PLL_FRAC_ENABLE_ON">ON</option>
+                </select>
+                <div class="inputvalueClock">
+                    <label for="pll3-frac-value-id">FRACN:</label>
+                    <input id="pll3-frac-value-id" type="number" min="0" max="8191" value="0"><br> <span>[0..8191]</span>
+                </div>
+                <div class="inputvalueClock">
+                    <label for="pll3-divn-id">DIVN:</label>
+                    <input id="pll3-divn-id" type="number" min="4" max="512" value="4"><br> <span>[4..512]</span>
+                </div>
+            </div>
+            <div id="pll3-divp-enable-id" class="osc-select-option">
+                <label for="pll3-divp-enable-select">DIVP Enable:</label>
+                <select id="pll3-divp-enable-select" class="osc-option-select">
+                    <option value="PLL_DIVP_ENABLE_OFF" selected>OFF</option>
+                    <option value="PLL_DIVP_ENABLE_ON">ON</option>
+                </select>
+            </div>
+            <div id="pll3-divq-enable-id" class="osc-select-option">
+                <label for="pll3-divq-enable-select">DIVQ Enable:</label>
+                <select id="pll3-divq-enable-select" class="osc-option-select">
+                    <option value="PLL_DIVQ_ENABLE_OFF" selected>OFF</option>
+                    <option value="PLL_DIVQ_ENABLE_ON">ON</option>
+                </select>
+            </div>
+            <div id="pll3-divr-enable-id" class="osc-select-option">
+                <label for="pll3-divr-enable-select">DIVR Enable:</label>
+                <select id="pll3-divr-enable-select" class="osc-option-select">
+                    <option value="PLL_DIVR_ENABLE_OFF" selected>OFF</option>
+                    <option value="PLL_DIVR_ENABLE_ON">ON</option>
+                </select>
+            </div>
+        </div>
+        <div class="pllPrescaler">
+            <div class="inputvalueClock">
+                <label for="pll3-divp-id">DIVP:</label>
+                <input id="pll3-divp-id" type="number" min="1" max="128" value="1"><br> <span>[1..128]</span>
+                <div class="inputvalueClock" id="pll3-p-value">48000000</div>
+            </div>
+            <div class="inputvalueClock">
+                <label for="pll3-divq-id">DIVQ:</label>
+                <input id="pll3-divq-id" type="number" min="1" max="128" value="1"><br> <span>[1..128]</span>
+                <div class="inputvalueClock" id="pll3-q-value">48000000</div>
+            </div>
+            <div class="inputvalueClock">
+                <label for="pll3-divr-id">DIVR:</label>
+                <input id="pll3-divr-id" type="number" min="1" max="128" value="1"><br> <span>[1..128]</span>
+                <div class="inputvalueClock" id="pll3-r-value">48000000</div>
+            </div>
+        </div>
+    </div>
+</div>

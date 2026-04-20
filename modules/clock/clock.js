@@ -172,7 +172,7 @@ export function clockModuleGenerateProcess()
     }
 }
 
-export function ClockModuleInitialPage() {
+export function ClockModuleInitialData() {
     const select = document.getElementById("hse-rtc-div-select");
     if (!select) {
         return;
