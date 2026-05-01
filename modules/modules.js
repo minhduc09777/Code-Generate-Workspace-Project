@@ -1,4 +1,5 @@
 import { clockModuleGenerateProcess, ClockModuleInitialData, ClockModuleInitialEvent } from './clock/clock.js';
+import { ioportModuleGenerateProcess, IoportModuleInitialData, IoportModuleInitialEvent } from './ioport/ioport.js';
 
 var modulesProcessAPIData = {
     "clock": {
@@ -9,7 +10,11 @@ var modulesProcessAPIData = {
         }
     },
     "ioport": {
-
+        "modulesProcessAPIData": {
+            "generate": ioportModuleGenerateProcess,
+            "initData": IoportModuleInitialData,
+            "initEvent": IoportModuleInitialEvent,
+        }
     }
 }
 

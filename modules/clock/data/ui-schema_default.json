@@ -48,7 +48,8 @@
         "valueType": "fixedValue",
         "selector": "#hsi48-value-id",
         "value": 48000000,
-        "enabledBy": "onState"
+        "enabledBy": "onState",
+        "enabledValue": "ENABLE_ON"
       }
     }
   },
@@ -66,7 +67,8 @@
         "valueType": "fixedValue",
         "selector": "#csi-value-id",
         "value": 4000000,
-        "enabledBy": "onState"
+        "enabledBy": "onState",
+        "enabledValue": "ENABLE_ON"
       },
       "runInStopmode": {
         "selector": "#csi-run-in-stopmode-select",
@@ -90,7 +92,8 @@
         "valueType": "fixedValue",
         "selector": "#hsi-value-id",
         "value": 64000000,
-        "enabledBy": "onState"
+        "enabledBy": "onState",
+        "enabledValue": "ENABLE_ON"
       },
       "runInStopmode": {
         "selector": "#hsi-stop-mode-select",
@@ -120,7 +123,8 @@
         "valueType": "fixedValue",
         "selector": "#lsi-value-id",
         "value": 32000,
-        "enabledBy": "onState"
+        "enabledBy": "onState",
+        "enabledValue": "ENABLE_ON"
       }
     }
   },
@@ -138,7 +142,8 @@
         "valueType": "fixedValue",
         "selector": "#lse-value-id",
         "value": 32768,
-        "enabledBy": "onState"
+        "enabledBy": "onState",
+        "enabledValue": "ENABLE_ON"
       },
       "bypassSelect": {
         "selector": "#lse-bypass-select",

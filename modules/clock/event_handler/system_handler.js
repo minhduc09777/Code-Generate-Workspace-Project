@@ -74,7 +74,6 @@ function updateSystemClock()
 
 function updateDomain1Clock()
 {
-    console.log("hello");
     const system = getInstance('system')?.getSystemClock() ?? null;
     if (!system) return;
 

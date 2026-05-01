@@ -1,0 +1,386 @@
+<div class="module-title">
+    <h2>IOPORT</h2>
+    <p>Configure GPIO IOPORT and export STM32 configuration code.</p>
+</div>
+<div id="ioport-module-id" class="ioport-content">
+    <div class="generate-field">
+        <label for="ioport-generate-checkbox">Generate</label>
+        <input type="checkbox" id="ioport-generate-checkbox" value="1"/>
+    </div>
+    <div class="port-container" id="porta-container">
+        <h3>PORTA</h3>
+        <div class="ioport-field">
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin0-num">Pin0</div>
+                <div class="mode-field">
+                    <label for="porta-pin0-mode-select">Mode</label>
+                    <select id="porta-pin0-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin0-pull-select">Pull</label>
+                    <select id="porta-pin0-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin0-otype-select">Output Type</label>
+                    <select id="porta-pin0-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin0-speed-select">Speed</label>
+                    <select id="porta-pin0-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin0-alternate-select">Alternate</label>
+                    <select id="porta-pin0-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin1-num">Pin1</div>
+                <div class="mode-field">
+                    <label for="porta-pin1-mode-select">Mode</label>
+                    <select id="porta-pin1-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin1-pull-select">Pull</label>
+                    <select id="porta-pin1-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin1-otype-select">Output Type</label>
+                    <select id="porta-pin1-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin1-speed-select">Speed</label>
+                    <select id="porta-pin1-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin1-alternate-select">Alternate</label>
+                    <select id="porta-pin1-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin2-num">Pin2</div>
+                <div class="mode-field">
+                    <label for="porta-pin2-mode-select">Mode</label>
+                    <select id="porta-pin2-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin2-pull-select">Pull</label>
+                    <select id="porta-pin2-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin2-otype-select">Output Type</label>
+                    <select id="porta-pin2-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin2-speed-select">Speed</label>
+                    <select id="porta-pin2-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin2-alternate-select">Alternate</label>
+                    <select id="porta-pin2-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin3-num">Pin3</div>
+                <div class="mode-field">
+                    <label for="porta-pin3-mode-select">Mode</label>
+                    <select id="porta-pin3-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin3-pull-select">Pull</label>
+                    <select id="porta-pin3-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin3-otype-select">Output Type</label>
+                    <select id="porta-pin3-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin3-speed-select">Speed</label>
+                    <select id="porta-pin3-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin3-alternate-select">Alternate</label>
+                    <select id="porta-pin3-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin4-num">Pin4</div>
+                <div class="mode-field">
+                    <label for="porta-pin4-mode-select">Mode</label>
+                    <select id="porta-pin4-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin4-pull-select">Pull</label>
+                    <select id="porta-pin4-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin4-otype-select">Output Type</label>
+                    <select id="porta-pin4-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin4-speed-select">Speed</label>
+                    <select id="porta-pin4-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin4-alternate-select">Alternate</label>
+                    <select id="porta-pin4-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin5-num">Pin5</div>
+                <div class="mode-field">
+                    <label for="porta-pin5-mode-select">Mode</label>
+                    <select id="porta-pin5-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin5-pull-select">Pull</label>
+                    <select id="porta-pin5-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin5-otype-select">Output Type</label>
+                    <select id="porta-pin5-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin5-speed-select">Speed</label>
+                    <select id="porta-pin5-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin5-alternate-select">Alternate</label>
+                    <select id="porta-pin5-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin6-num">Pin6</div>
+                <div class="mode-field">
+                    <label for="porta-pin6-mode-select">Mode</label>
+                    <select id="porta-pin6-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin6-pull-select">Pull</label>
+                    <select id="porta-pin6-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin6-otype-select">Output Type</label>
+                    <select id="porta-pin6-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin6-speed-select">Speed</label>
+                    <select id="porta-pin6-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin6-alternate-select">Alternate</label>
+                    <select id="porta-pin6-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin7-num">Pin7</div>
+                <div class="mode-field">
+                    <label for="porta-pin7-mode-select">Mode</label>
+                    <select id="porta-pin7-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin7-pull-select">Pull</label>
+                    <select id="porta-pin7-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin7-otype-select">Output Type</label>
+                    <select id="porta-pin7-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin7-speed-select">Speed</label>
+                    <select id="porta-pin7-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin7-alternate-select">Alternate</label>
+                    <select id="porta-pin7-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin8-num">Pin8</div>
+                <div class="mode-field">
+                    <label for="porta-pin8-mode-select">Mode</label>
+                    <select id="porta-pin8-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin8-pull-select">Pull</label>
+                    <select id="porta-pin8-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin8-otype-select">Output Type</label>
+                    <select id="porta-pin8-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin8-speed-select">Speed</label>
+                    <select id="porta-pin8-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin8-alternate-select">Alternate</label>
+                    <select id="porta-pin8-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin9-num">Pin9</div>
+                <div class="mode-field">
+                    <label for="porta-pin9-mode-select">Mode</label>
+                    <select id="porta-pin9-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin9-pull-select">Pull</label>
+                    <select id="porta-pin9-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin9-otype-select">Output Type</label>
+                    <select id="porta-pin9-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin9-speed-select">Speed</label>
+                    <select id="porta-pin9-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin9-alternate-select">Alternate</label>
+                    <select id="porta-pin9-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin10-num">Pin10</div>
+                <div class="mode-field">
+                    <label for="porta-pin10-mode-select">Mode</label>
+                    <select id="porta-pin10-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin10-pull-select">Pull</label>
+                    <select id="porta-pin10-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin10-otype-select">Output Type</label>
+                    <select id="porta-pin10-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin10-speed-select">Speed</label>
+                    <select id="porta-pin10-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin10-alternate-select">Alternate</label>
+                    <select id="porta-pin10-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin11-num">Pin11</div>
+                <div class="mode-field">
+                    <label for="porta-pin11-mode-select">Mode</label>
+                    <select id="porta-pin11-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin11-pull-select">Pull</label>
+                    <select id="porta-pin11-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin11-otype-select">Output Type</label>
+                    <select id="porta-pin11-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin11-speed-select">Speed</label>
+                    <select id="porta-pin11-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin11-alternate-select">Alternate</label>
+                    <select id="porta-pin11-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin12-num">Pin12</div>
+                <div class="mode-field">
+                    <label for="porta-pin12-mode-select">Mode</label>
+                    <select id="porta-pin12-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin12-pull-select">Pull</label>
+                    <select id="porta-pin12-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin12-otype-select">Output Type</label>
+                    <select id="porta-pin12-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin12-speed-select">Speed</label>
+                    <select id="porta-pin12-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin12-alternate-select">Alternate</label>
+                    <select id="porta-pin12-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin13-num">Pin13</div>
+                <div class="mode-field">
+                    <label for="porta-pin13-mode-select">Mode</label>
+                    <select id="porta-pin13-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin13-pull-select">Pull</label>
+                    <select id="porta-pin13-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin13-otype-select">Output Type</label>
+                    <select id="porta-pin13-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin13-speed-select">Speed</label>
+                    <select id="porta-pin13-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin13-alternate-select">Alternate</label>
+                    <select id="porta-pin13-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin14-num">Pin14</div>
+                <div class="mode-field">
+                    <label for="porta-pin14-mode-select">Mode</label>
+                    <select id="porta-pin14-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin14-pull-select">Pull</label>
+                    <select id="porta-pin14-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin14-otype-select">Output Type</label>
+                    <select id="porta-pin14-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin14-speed-select">Speed</label>
+                    <select id="porta-pin14-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin14-alternate-select">Alternate</label>
+                    <select id="porta-pin14-alternate-select"></select>
+                </div>
+            </div>
+            <div class="iopin-field">
+                <div class="pin-num" id="porta-pin15-num">Pin15</div>
+                <div class="mode-field">
+                    <label for="porta-pin15-mode-select">Mode</label>
+                    <select id="porta-pin15-mode-select"></select>
+                </div>
+                <div class="Pull-field">
+                    <label for="porta-pin15-pull-select">Pull</label>
+                    <select id="porta-pin15-pull-select"></select>
+                </div>
+                <div class="otype-field">
+                    <label for="porta-pin15-otype-select">Output Type</label>
+                    <select id="porta-pin15-otype-select"></select>
+                </div>
+                <div class="speed-field">
+                    <label for="porta-pin15-speed-select">Speed</label>
+                    <select id="porta-pin15-speed-select"></select>
+                </div>
+                <div class="alternate-field">
+                    <label for="porta-pin15-alternate-select">Alternate</label>
+                    <select id="porta-pin15-alternate-select"></select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ioport-note">
+        <p>Select the configuration then press <strong>Generate</strong> to view the corresponding code and macro.</p>
+    </div>
+</div>

@@ -28,8 +28,6 @@ async function generateCodes() {
         return;
     }
 
-    console.log(Content);
-
     handleCodeBlock(Content);
     handleConfigBlock(Content);
 }
@@ -37,12 +35,13 @@ async function generateCodes() {
 async function InitialisePage() {
     const html = await module.LoadHtml();
     document.getElementById("module-container-id").innerHTML = html;
-    document.getElementById("clock").classList.toggle('pressed-btn');
+    document.getElementById(module.getName()).classList.toggle('pressed-btn');
     oldModule = module.getName();
 
-    module.loadCSS();
-    module.initData();
+    await module.loadCSS();
+    await module.initData();
 }
+
 
 function InitialiseEvent()
 {
@@ -53,12 +52,12 @@ function InitialiseEvent()
     InitialiseBottomScrollbar();
 
     document.querySelectorAll(".tab-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", async () => {
             const targetId = btn.id;
             if (!module.isSupportModule(targetId))
             {
                 ToggleContainer('generate-container-id');
-                btn.classList.toggle('pressed-btn')
+                btn.classList.toggle('pressed-btn');
                 return;
             }
             if (targetId === module.getName()) return;
@@ -66,6 +65,12 @@ function InitialiseEvent()
             module.selectCurrentModule(targetId);
             btn.classList.toggle('pressed-btn');
             oldModule = module.getName();
+
+            const html = await module.LoadHtml();
+            document.getElementById("module-container-id").innerHTML = html;
+            await module.loadCSS();
+            await module.initData();
+            await module.initEvent();
         });
     });
 

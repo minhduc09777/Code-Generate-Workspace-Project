@@ -183,7 +183,7 @@ export function handleCodeBlock(content)
 
 export function handleConfigBlock(content)
 {
-    if (content === null)
+    if (content === null || content["config"] === null)
     {
         // handle something
         return;
@@ -211,7 +211,6 @@ export function handleConfigBlock(content)
 
     for (const [macro, value] of entries) {
         const lineContent = macro.padEnd(maxLength + 5) + value;
-        console.log(lineContent);
         addLine(configBlock, lineContent, "config-line", "span");
     }
 
@@ -277,6 +276,7 @@ function loadDataFromHtml(blockId, fieldsMeta) {
         resolvedFields[fieldName] = radioValue;
     }
 
+
     // Step 3b: Resolve non-radio fields (with or without dependencies)
     for (const [fieldName, meta] of Object.entries(fieldsMeta)) {
         if (meta.type === "radio") {
@@ -317,7 +317,7 @@ function isFieldEnabled(fieldMeta, resolvedFields) {
         return true;
     }
 
-    return resolvedFields[fieldMeta.enabledBy] !== "ENABLE_OFF";
+    return resolvedFields[fieldMeta.enabledBy] === fieldMeta.enabledValue;
 }
 
 function resolveFieldValue(field, fieldMeta, resolvedFields) {
