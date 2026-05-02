@@ -46,7 +46,7 @@ class clock_output_cfg {
             `    .mco1_srcclk = STM32_CLOCK_${this.mco1_srcclk},`,
             `    .mco1_div    = STM32_CLOCK_${this.mco1_div},`,
             `    .mco2_srcclk = STM32_CLOCK_${this.mco2_srcclk},`,
-            `    .mco2_div    = STM32_CLOCK_${this.mco2_div},`,
+            `    .mco2_div    = STM32_CLOCK_${this.mco2_div}`,
         ];
     }
 

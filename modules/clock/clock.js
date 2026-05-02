@@ -107,7 +107,7 @@ function blockClockGenerateProcess(clockManageMent, blockName)
     const inforObj = BlockObj.getInforVar();
     const sectionCode = clockManageMent.InitialiseCodeSections(blockName);
     const sectionConfig = clockManageMent.InitialiseConfigSections(blockName);
-    
+
     const Blockcontent = pipelineGenerate(sectionCode, sectionConfig, inforObj["struct"], inforObj["varName"]);
     return Blockcontent;
 }

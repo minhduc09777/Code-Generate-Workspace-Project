@@ -31,7 +31,7 @@ class rtc_cfg {
         return [
             '/* rtc clock config */',
             `    .rtc_enable = STM32_CLOCK_${this.rtc_enable},`,
-            `    .rtc_srcclk = STM32_CLOCK_${this.rtc_srcclk},`,
+            `    .rtc_srcclk = STM32_CLOCK_${this.rtc_srcclk}`,
         ];
     }
 

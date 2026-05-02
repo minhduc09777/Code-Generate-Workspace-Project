@@ -227,7 +227,6 @@ class pll_config{
         lines.push(`        .divq = ${this.pllDivQ},`);
         lines.push(`        .divr = ${this.pllDivR},`);
         lines.push(`        .divn = ${this.pllDivN},`);
-        lines.push(`    },`);
 
         return lines;
     }
@@ -310,7 +309,15 @@ class pll_clock_managment
             ...this.pllCommon.getCodeData(),
             ...this.pllConfig.flatMap((config, index) => {
                 const prescaler = prescalers[index]?.getDiv() ?? 1;
-                return config.getCodeData(index + 1, prescaler) ?? [];
+                let data = config.getCodeData(index + 1, prescaler) ?? [];
+
+                if ((data !== null) && (index < this.pllConfig.length - 1)){
+                    data.push("    },");
+                }
+                else{
+                    data.push("    }");
+                }
+                return data;
             }),
         ];
     }
