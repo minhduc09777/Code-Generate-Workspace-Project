@@ -382,9 +382,9 @@ class system_clock {
 	getCodeData() {
 		const lines = [
 			'/* system config */',
-			`    .sysclk_src = ${this.sysclk_src},`,
-			`    .domains_select_prediv = ${this.domains_select_prediv},`,
-			`    .domains_ahb_select_prediv = ${this.domains_ahb_select_prediv},`,
+			`    .sysclk_src = STM32_CLOCK_${this.sysclk_src},`,
+			`    .domains_select_prediv = STM32_${this.domains_select_prediv},`,
+			`    .domains_ahb_select_prediv = STM32_${this.domains_ahb_select_prediv},`,
 			'    .p_domain_cfg = {',
 		];
 

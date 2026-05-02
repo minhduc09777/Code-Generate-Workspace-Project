@@ -70,24 +70,6 @@ function blockIoportGenerateProcess(ioportManageMent, blockName) {
     const BlockObj = ioportManageMent.getBlock(blockName);
     if (BlockObj === null) return null;
 
-    // // Check simple generate checkbox before generating code
-    // try {
-    //     const genEl = document.getElementById('ioport-generate-checkbox');
-    //     if (genEl instanceof HTMLInputElement && genEl.type === 'checkbox' && !genEl.checked) {
-    //         // Generation disabled by user
-    //         return {
-    //             code: ["ioport_instance_ctrl_t g_ioport_instance;",
-    //                  "ioport_cfg_t g_ioport_cfg {",
-    //                  ".pinscfg = NULL",
-    //                  "};"
-    //                 ]
-    //             ,
-    //             config: null
-    //         };
-    //     }
-    // } catch (e) {
-    //     console.warn('Could not access generate checkbox', e);
-    // }
 
     const sectionCode = ioportManageMent.InitialiseCodeSections(blockName);
     const sectionConfig = ioportManageMent.InitialiseConfigSections(blockName) || [];

@@ -219,7 +219,7 @@ class ioport {
     }
 
     GetCodeArray() {
-        const portCfgName = `g_ioport_port${this.portName}_pinscfg`;
+        const portCfgName = `g_ioport_${this.portName}_pinscfg`;
         
         let pinsCodeArray = [];
         for (const pin of this.pins) {
@@ -333,6 +333,12 @@ class IoportModule {
                     codeLines.push(`        ${portVarNames[i]}${trailingComma}`);
                 }
             }
+            else{
+                codeLines.push('        NULL');
+            }
+        }
+        else{
+            codeLines.push('        NULL');
         }
 
         codeLines.push('    },');
