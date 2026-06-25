@@ -200,11 +200,22 @@ class system_domain2_cfg {
 
 	getTimerxHz(ahbHz) {
 		const mult = parseInt(this.values.alltimers_pclkx_type?.split('_').pop()?.replace('X', '')) || 2;
+		const div = parseInt(this.values.pclk1_div?.split('_').pop()) || 1;
+
+		if (div < mult){
+			return this.getHclkHz(ahbHz);
+		}
+
 		return this.getPclk1Hz(ahbHz) * mult;
 	}
 
 	getTimeryHz(ahbHz) {
 		const mult = parseInt(this.values.alltimers_pclkx_type?.split('_').pop()?.replace('X', '')) || 2;
+		const div = parseInt(this.values.pclk2_div?.split('_').pop()) || 1;
+
+		if (div < mult){
+			return this.getHclkHz(ahbHz);
+		}
 		return this.getPclk2Hz(ahbHz) * mult;
 	}
 }
